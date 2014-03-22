@@ -1,0 +1,227 @@
+/* 
+
+This file contains all your CSS style rules. 
+indent = 2 spaces, not tabs 
+
+Reference: http://www.w3schools.com/css/default.asp
+
+*/
+
+/* because every browser has a built in stylesheet we have to reset those properties that we want to manipulate later. We do this by setting those properties to zero for the entire HTML document and any other tag selectors we want to redefine from scratch*/
+
+html h1 {
+  margin: 0;
+  font-family: 'Trocchi', cursive;
+  color: #23617F;
+  padding-top:50px;
+  font-size:3em;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+h2 {
+  font-family: 'Trocchi', cursive;
+  font-size: 2em;
+  color: #23617F;
+  font-weight:600;
+  margin: 0px;
+ }
+
+/* next we set up those properties that we want to apply everywhere that is visible on the page using the body selector. Notice the "font-family" */
+
+body {
+  font-size: 1.1em;
+  font-family: "Helvetica Neue", Helvetica, Verdana, sans-serif;
+  background-color: #38A5CC;
+}
+
+/* The container sits in the middle of the page and is a fixed width Reference: http://www.w3schools.com/css/css_boxmodel.asp
+*/
+
+.container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#F5FCFF;
+  border-radius: 10px;
+  border-radius: 10px;
+  border-radius: 20px;
+  height:100%;
+}
+
+.article_title {
+  font-size:30px;
+}
+
+/* The next set of styles pretty much just "open up" the page and create white space */
+
+ul a {
+  text-decoration: none;
+  color:white;
+}
+
+
+header {
+  margin: 20px;
+  clear: both;
+  width:95%;
+
+}
+ 	
+.page_heading {
+    margin-left: 20px;
+    float:left;
+    width:28%;
+        
+} 
+	
+
+
+/* we want the validation pages to appear on the right side of the page inside the container */
+
+
+
+.validation_badge {
+   margin-top:50px;
+   margin-left:20px;
+   float: right;
+   width:8%;
+}
+
+.logo img {
+  width:50%;
+  height:170px;
+  float:left;
+  margin-left:82px;
+  margin-top:65px;
+  border: 2px #8399A8 solid;
+}
+
+
+.articles {
+  width:69%;
+  float:right;
+}
+
+article {
+  margin-left: 30px;
+}
+
+.blog_title p {
+  margin-left:50px;
+  font-size:3em;
+  font-weight:700;
+  font-family: cursive;
+  color:#23617F;
+}
+
+.article_heading {
+  width: 80%;
+  margin-left: 20px;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: #7F95A3;
+  color:#30383D;
+
+}
+
+.article_content {
+  margin: 0 50px 40px 20px;
+  padding: 10px;
+  border: 1px solid gray;
+  background-color: #56727F;
+  color:#FFFFFF;
+}
+
+
+.prompt_text {
+  font-size: 24px;
+  padding-left: 10px;
+  color: #000;
+}
+.form_field_table {
+  margin-left: 30px;
+  border: none;
+}
+.form_field_table td {color: #00f;}
+
+form {
+  color: #00f;
+}
+.buttons {
+  float: right;
+}
+
+.float_right {
+  float: right;
+}
+
+/* finally, the footer stretches across the whole page width in an open, centered sort of way. */
+footer {
+  font-size: .80em;
+  min-height: 40px;
+  text-align: center;
+  margin: 20px;
+  clear:both;
+}
+
+ul {
+  margin-top:65px;
+}
+
+nav li {
+  margin:10px;
+  font-size:1.5em;
+  margin-left:15px;
+  margin-top:20px;
+  list-style-position: inside;
+  list-style-type: none;
+  font-style:italic;
+}
+
+nav {
+  width: 27%;
+  color:white;
+  background-color: #6C787F;
+  float:left;
+  margin-top:75px;
+  margin-left:30px;
+  clear:both;
+  border:1px solid black;
+  border-radius: 20px;
+  border-radius: 20px;
+
+}
+
+div .headshot img {
+  margin:50px;
+  width:70%;
+  height:70%;
+    border: 2px solid black;
+
+}
+
+
+.contact1 {
+  width: 29%;
+}
+
+.contact2 {
+  width: 71%;
+}
+
+.deadspace {
+  margin:50px;
+}
+
+.contact_information {
+  margin-top: 10px;
+    text-align:center;
+    
+  }
+
+.contact_information a {
+ text-decoration: none;
+    color:white;
+    text-decoration:underline;
+}
