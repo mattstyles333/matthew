@@ -2,7 +2,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	background-color: white;
-	width: 998px;
+	width: 1000px;
 	height:1200px;
 	margin-top:-12px;
 	border-radius:8px;
@@ -147,6 +147,19 @@ article {
 	font-size:1.5em;
 	color:#1F5F91;
 	font-weight: 800;
+	margin-left:40px;
+	margin-top:50px;
+}
+
+.title2 h1 {
+	font-size:1.5em;
+	color:#1F5F91;
+	font-weight: 800;
+	margin-top:50px;
+}
+
+ul {
+	list-style-type: none;
 }
 
 
@@ -194,6 +207,7 @@ article div {
 #florish2 img{
 	width:999px;
 	margin:auto;
+	margin-left:2px;
 }
 
 footer {
@@ -214,4 +228,13 @@ footer p {
 section hr {
 	width:500px;
 	margin-top:40px;
+}
+
+iframe {
+	height:400px;
+	width:400px;
+}
+
+audio {
+	margin-left:-450px;
 }
