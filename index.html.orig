@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<<<<<<< HEAD
+  <title>Generic Massage</title>
+=======
+ <title>Serenity Massage</title>
+>>>>>>> 9c5ce2f82a767af470a1f4cf8ecc3c9736a6724b
+
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+
+<link href='http://fonts.googleapis.com/css?family=Radley' rel='stylesheet' type='text/css'>
+
+<link rel="icon" type="image/png" href="images/icon.jpg">
+
+<<<<<<< HEAD
+<body background="images/background.jpg">
+=======
+</head>
+>>>>>>> 9c5ce2f82a767af470a1f4cf8ecc3c9736a6724b
+
+<body background="images/background.jpg">
+	<div id="florish">
+		<img src="images/top.gif"/>
+	</div>
+	<div class="container">
+		<header>
+			<div class="button">
+				<form>
+					<input type="button" name="contact" id="submit" value="BOOK NOW" onClick="parent.location='mailto:mattjunk85@yahoo.com?subject=I'd like to book an appointment&">
+				</form>
+				<p class="bold"> Hours of Operation:</p>
+				<p> Monday-Friday 10-6pm </p>
+				<p> Saturday 9-10pm </p>
+			</div>
+
+			<div>
+				<img src="images/logo.jpg" alt="text" class="logo"/>
+			</div>
+
+			<div class="social">
+				<p> Follow Us!</p>
+
+				<div class="twitter">
+					<a href="https://twitter.com/intent/follow?screen_name=SerenityMassag3"><img src="https://dev.twitter.com/sites/default/files/images_documentation/bird_blue_48.png" /></a> 
+				</div>
+				<div class="facebook">
+				<a href="https://www.facebook.com/tryserenity"> <img src="images/fb.png"/> </a>
+				</div>
+			</div>
+		</header>
+
+		<nav>
+			<table class="nav_bar">
+				<tr>
+					<td class="page_link" id="first">
+						<a href="offerings.html"> Offerings </a>
+					</td>
+					
+					<td class="page_link">
+						<a href="feedback.html">Feedback</a>
+					</td>
+						
+					<td class="page_link">
+						<a href="links.html">Links</a>
+					</td>
+						
+					<td class="page_link">
+						<a href="contact.html">Contact</a>
+					</td>
+				</tr>
+			</table>
+
+		</nav>
+
+		<section>
+			<div class="main_photo">
+			<img src="images/lobby.jpg"/>
+			</div>
+			<article>
+				<div class="title">
+					Welcome to Serenity Massage Studios!
+				</div>
+				<div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. 
+				<br>
+				<br>
+				Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. 
+				<br>
+				<br>
+				Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. 
+				<br>
+				<br>
+				Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. 
+				</div>
+			</article>
+			<hr></hr>
+		</section>
+
+		<div class="sidebar">	
+			<div class="quote">
+				<p>
+				“You cannot travel the path until you have become the path itself” 
+				</p>
+			<hr></hr>
+			</div>
+			<div class="photo">
+				<img src="images/trunk.jpg"/>
+		</div>
+	</div>
+		<footer>
+			<p>Team Serenity &copy; 2014</p>
+			<div id="florish2">
+
+		<img src="images/bottom.png"/>	
+		
+			</div>
+		</footer>
+
+
+
+
+
+
+</body>
+
+</html>
