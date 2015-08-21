@@ -1,50 +1,106 @@
 $(document).ready(function(){
 
-  $('.carousel').slick({
-    centerMode: true,
-    infinite: true,
-    slidesToShow: 3,
-    dotsCount: 4,
-    slidesToScroll: 1,
-    // dots: true,
-    arrows: false,
-    focusOnSelect: true,
-    speed: 700
-  });
-
-  $('#test').slick({
-    infinite: true,
-    slidesToScroll: 1,
-    // dots: true,
-    // arrows: false,
-    speed: 700
-  });
-
-  function initCarousel() {
-    $('#test').slick({
-      infinite: true,
-      slidesToScroll: 1,
-      // dots: true,
-      // arrows: false,
-      speed: 700
-    });
+  var modalText = {
+    roambi: {
+      header: 'Roambi.com',
+      color: '#FF8FBD',
+      detail: 'Visual data and analytics for big business.',
+      bullets: ['Wordpress','Visual Analytics','Hubspot Integration']
+    },
+    walker: {
+      header: 'WalkerTracker',
+      color: '#81FFCC',
+      detail: 'Fitness Tracking for big business.',
+      bullets: ['Device Integration','Visual Analytics','Gamification']
+    },
+    powur: {
+      header: 'Powur.com',
+      color: '#8BE7FF',
+      detail: 'Solar Panel MLM Platform.',
+      bullets: ['Rails App','Visual Analytics','Team Tree Management']
+    },
+    mystand: {
+      header: 'MyStand',
+      color: '#FF4E4E',
+      detail: 'Social Media charity platform',
+      bullets: ['Social Networking','Media Sharing','Gamfication']
+    },
+    never: {
+      header: 'NeverSurrender',
+      color: '#FFD2E0',
+      detail: 'ALS foundation website.',
+      bullets: ['Single Page App','Visual Effects','Mobile Device Support']
+    },
   }
 
+  $(document).foundation();
+  jQuery('.scrollbar-outer').scrollbar();
 
-  $('#cube-right').click(function(event){
-    var cube = $('.slick-center').find('.cube');
-    rotateCube(cube, 'right');
+  function initCarousel() {
+    var slidesToShow = 3;
+    if ($(window).width() < 650) slidesToShow = 1;
+    $('.projects').show();
+    $('.carousel').slick({
+      centerMode: true,
+      infinite: true,
+      slidesToShow: slidesToShow,
+      dotsCount: 4,
+      slidesToScroll: 1,
+      autoplay: false,
+      autoplaySpeed: 2000,
+      // dots: true,
+      arrows: false,
+      focusOnSelect: true,
+      speed: 700
+    });
+    $('.carousel').slick('slickPlay');
+  }
+
+  function destroyCarousel() {
+    if (!$('.projects').is(":visible")) return;
+    $('.carousel').slick('unslick');
+    $('.projects').hide();
+  }
+
+  $(window).resize(function(){
+    if(!$('.projects').hasClass('active') || $(window).width() > 650) return;
+    destroyCarousel()
+    initCarousel();
+  })
+
+  var dragging;
+
+  $('.slide-img').mousedown(function(){
+    dragging = false;
+    setTimeout(function(){
+      dragging = true;
+    },100)
   });
 
-  $('#cube-left').click(function(event){
-    var cube = $('.slick-center').find('.cube');
-    rotateCube(cube, 'left');
-  });
+  $('.slide-img').mouseup(function(){
+    if (!$(this).parent().is('.slick-current')) return;
+    var id = $(this).attr('id');
+    if (!dragging) {
+      fillModal(id);
+      $('#modal').foundation('reveal', 'open');
+      $('.carousel').slick('slickPause');
+    }
+  })
 
-  $('.carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-    $('.cube').css("transform","rotateY(0)");
-    xAngle = 0, yAngle = 0;
-  });
+  function fillModal(id) {
+    $('#modal').find('.header').text(modalText[id].header)
+                               .css('color',modalText[id].color)
+    $('#modal').find('.detail').text(modalText[id].detail)
+
+    $.each($('#modal').find('li'), function(index, value ) {
+      $(this).text(modalText[id].bullets[index])
+    });
+    $('.modal-img').attr('src','images/logos/'+ id + '-full.jpg')
+  }
+
+  $('.slide-img').click(function(){
+    $('.carousel').slick('slickPause');
+  })
 
   $('.landing-sect span').fadeIn(8000);
 
@@ -71,10 +127,12 @@ $(document).ready(function(){
   $('.p3').on('click', function(){
     if ($(this).is('.active, .clear, .start')) return;
     // $('.clouds').hide();
-    $('.projects').css('visibility','visible');
+    $('.projects').show();
+    $('.projects').addClass('active');
+    initCarousel();
     var id = parseInt($(this).attr('id'));
     $(this).addClass('extend');
-    shutterPanels(id);
+    shutterPanels(id)
   });
 
   $('.p4').on('click', function(){
@@ -85,9 +143,9 @@ $(document).ready(function(){
     $('.p2').addClass('clear');
   });
 
-  $('.panel').on('click', function(){
+  $('.pane').on('click', function(){
     if ($(this).hasClass('start') || $(this).hasClass('clear')) return;
-    if ($('.panel').hasClass('active')) {
+    if ($('.pane').hasClass('active')) {
       returnPanels();
     } else {
       $(this).toggleClass('active');
@@ -134,8 +192,8 @@ $(document).ready(function(){
 
   function returnPanels() {
     $('.clouds').fadeIn();
-    $('.clouds.inverse, .stack, .about-box, .icon-box').hide();
-    setTimeout(function(){ $('.projects').css('visibility','hidden') },300)
+    $('.clouds.inverse, .stack, .about-box').hide();
+    setTimeout(function(){ destroyCarousel(); },300)
     $('.landing-sect').addClass('shutter');
     $('section').removeClass('active');
     for (var i = 1; i < 5; i++) {

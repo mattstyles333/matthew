@@ -15,18 +15,67 @@ a {
   color: #49b9c0;
 }
 
-#test {
-  height: 35vh;
-  .shot-1 {
-    height: 35vh;
-    transform: scale(1.2,1.2)
+//Foundation Overrides
+.reveal-modal {
+  background-color: #444 !important;
+  border: solid 1px #333 !important;
+  top: 2% !important;
+  height: 96% !important;
+  padding-top: 40px !important;
+
+  .header {
+    font-size:24pt;
+    a {
+      color: #50D1F7;
+    }
+  }
+
+  .detail {
+    display: block;
+    font-weight: 300;
+    color: #eee;
+    font-stretch: italic;
+  }
+
+  ul {
+    margin-top: 15px;
+    li {
+      font-weight: 300;
+      color: #eee;
+    }
+  }
+
+  .close-reveal-modal {
+    top: 0 !important;
+    right: 15px !important;
+    color: #ccc !important;
   }
 }
+
+//Scrollbar Overrides
+.scroll-box {
+  overflow: hidden;
+  /* Firefox */
+  height: -moz-calc(100% - 170px);
+  /* WebKit */
+  height: -webkit-calc(100% - 170px);
+  /* Opera */
+  height: -o-calc(100% - 170px);
+  /* Standard */
+  height: calc(100% - 170px);
+  .scrollbar-outer {
+    height: 100%;
+    .scroll-element { background-color: #444 !important }
+    .scroll-element_track { background-color: #333 !important }
+    .scroll-bar { background-color: #888 !important; cursor: pointer }
+    .scroll-element:hover .scroll-bar { background-color: #999 !important }
+  }
+}
+// 
 
 .light {
   font-weight: 300;
 }
-
 
 .clouds {
   &.inverse {
@@ -50,30 +99,27 @@ a {
 
   #cloud-1 {
     background: url('../images/clouds1.png'); 
-    background-repeat-y: no-repeat;
-    background-repeat-x: repeat;
+    background-repeat: repeat-x;
     background-position: bottom left;
-    animation: drift 300s linear;
+    animation: drift 150s linear;
     animation-iteration-count: infinite;
     z-index: 3;
   }
 
   #cloud-2 {
     background: url('../images/clouds2.png');
-    background-repeat-y: no-repeat;
-    background-repeat-x: repeat;
+    background-repeat: repeat-x;
     background-position: bottom left;
-    animation: drift 250s linear;
+    animation: drift 200s linear;
     animation-iteration-count: infinite;
     z-index: 2;
   }
 
   #cloud-3 {
     background: url('../images/clouds3.png');
-    background-repeat-y: no-repeat;
-    background-repeat-x: repeat;
+    background-repeat: repeat-x;
     background-position: bottom left;
-    animation: drift 200s linear;
+    animation: drift 500s linear;
     animation-iteration-count: infinite;
     background-color: #2f98b6;
     z-index: 1;
@@ -86,42 +132,43 @@ a {
 }
 
 section.projects {
-  visibility: hidden;
-  width: 90%;
+  // visibility: hidden;
+  // width: 100%;
+  display: none;
   margin: 0 auto;
   position: absolute;
   left: 0;
   right: 0;
   z-index: 11;
-  top: 5vh;
+  // top: 5vh;
 
-  .chevron-box {
-    position: absolute;
-    height: 35vh;
-    width: 30%;
-    margin: auto auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+  // .chevron-box {
+  //   position: absolute;
+  //   height: 35vh;
+  //   width: 30%;
+  //   margin: auto auto;
+  //   left: 0;
+  //   right: 0;
+  //   top: 0;
+  //   bottom: 0;
 
-    .fa {
-      position: absolute;
-      bottom: 0;
-      color: #fff;
-      background: rgba(0,0,0,0.3);
-      padding: 5px;
-      cursor: pointer;
-      z-index: 99;
-      padding: 15px 20px;
-      &.fa-chevron-left {
-        left: 0;
-      }
-      &.fa-chevron-right {
-        right: 0;
-      }
-    }
-  }
+  //   .fa {
+  //     position: absolute;
+  //     bottom: 0;
+  //     color: #fff;
+  //     background: rgba(0,0,0,0.3);
+  //     padding: 5px;
+  //     cursor: pointer;
+  //     z-index: 99;
+  //     padding: 15px 20px;
+  //     &.fa-chevron-left {
+  //       left: 0;
+  //     }
+  //     &.fa-chevron-right {
+  //       right: 0;
+  //     }
+  //   }
+  // }
 
   .carousel {
     text-align: center;
@@ -143,27 +190,46 @@ section.projects {
       right: 0;
     }
     .slick-slide {
-      transform: scale(.5,.5);
       outline: none;
-      background-size: 100%;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 35vh;
-      transition: transform .7s ease;
       cursor: pointer;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      filter: gray;
+      transition: filter .7s linear;
+      -webkit-transition: -webkit-filter .7s linear;
+      // .slide-button {
+      //   position: absolute;
+      //   bottom: 0;
+      //   right: 0;
+      //   z-index: 1;
+      //   padding: 5px 10px;
+      //   background-color: #000;
+      //   opacity: 0;
+      //   transition: opacity 1s;
+      //   cursor: pointer;
 
-      .shot-1 {
-        height: 100%;
-        background-image: url('http://www.benbaker.co.uk/img/3-refract.jpg');
-        background-size: 100%;
-        background-position: center center;
-        background-repeat: no-repeat;
+      //   .fa {
+      //     color: #fff;
+      //     font-size: 20pt;
+      //   }
+      // }
+
+      // .slide-mask {
+      //   height: 100%; 
+      //   width: 100%;
+      //   background: rgba(0,0,0,0.3);
+      // }
+
+      img {
+        width: 100%;
+        max-height: 350px;
+        max-width: 600px;
       }
 
       &.slick-center {
-        transform: scale(1.2,1.2);
-        opacity: 1;
-        cursor: default;
+        cursor: pointer;
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
       }
     }
   }
@@ -178,7 +244,7 @@ section.projects {
     display: block;
     margin: 0 auto;
     position: absolute;
-    bottom: -30px;
+    bottom: 100px;
     left: 0;
     right: 0;
     padding: 0;
@@ -305,6 +371,7 @@ section.stack {
     left: 0;
     right: 0;
     width: 345px;
+    margin: 0 auto;
   }
 
   .box {
@@ -434,6 +501,7 @@ section.connect {
     font-weight: 300;
     font-size: 10pt;
     left: 0;
+    transition: opacity .3s linear;
 
     .left {
       float: left;
@@ -457,6 +525,7 @@ section.connect {
     .icon {
       box-shadow: 0 0 0 3px rgba(255,255,255,1);
       overflow: hidden;
+      display: none;
       -webkit-transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
       -moz-transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
       transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
@@ -464,17 +533,20 @@ section.connect {
       margin: 0px 5%;
       width: 70px;
       height: 70px;
-      // border-radius: 50%;
       position: relative;
       text-align: center;
-      display: inline-block;
+
+      &#icon-1 { animation: flipIn .5s ease; }
+      &#icon-2 { animation: flipIn .5s ease; }
+      &#icon-3 { animation: flipIn .5s ease; }
+      &#icon-4 { animation: flipIn .5s ease; }
+      &#icon-5 { animation: flipIn .5s ease; }
     }
 
     .fa {
       text-align: center;
       font-size: 27pt;
       line-height: 50pt;
-      // margin-left: -7px;
       color: #fff;
 
       &.fa-paper-plane {
@@ -501,6 +573,21 @@ section.connect {
       -webkit-animation: toBottomFromTop 0.3s forwards;
       -moz-animation: toBottomFromTop 0.3s forwards;
       animation: toBottomFromTop 0.3s forwards;
+    }
+  }
+}
+
+.connect {
+  .info-box, .icon-box {
+    opacity: 0;
+    transition: opacity .3s linear;
+  }
+  &.active {
+    .info-box, .icon-box {
+      opacity: 1;
+      .icon {
+        display: inline-block;
+      }
     }
   }
 }
@@ -570,6 +657,8 @@ section.connect {
     cursor: pointer;
     height: 8vw;
     max-height: 110px;
+    min-height: 80px;
+    min-width: 80px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -580,19 +669,20 @@ section.connect {
   }
 }
 
-.connect {
-  div {
-    opacity: 0;
-    transition: opacity .3s linear;
-  }
-  &.active {
-    div {
-      opacity: 1;
-    }
-  }
-}
+// .connect {
+//   div {
+//     opacity: 0;
+//     transition: opacity .3s linear;
+//   }
+//   &.active {
+//     div {
+//       opacity: 1;
+//     }
 
-.panel {
+//   }
+// }
+
+.pane {
   position: absolute;
   cursor: pointer;
   -ms-transform: -ms-transform .3s;
@@ -622,7 +712,6 @@ section.connect {
     height: 42vh; 
 
     .header {
-      /*text-shadow: 1px 4px 6px #559B90, 0 0 0 #000, 1px 4px 6px #559B90;*/
       color: #A9EDFF;
       left: 35px;
       bottom: 25px;
@@ -748,6 +837,20 @@ section.connect {
   }
 }
 
+@media only screen and (max-width: 70em), screen and (max-height: 55em)  {
+  section.about .about-box .detail {
+    font-size: 12pt;
+    line-height: 21pt;
+  }
+}
+
+@media only screen and (max-width: 50em){
+  section.about .about-box .detail {
+    font-size: 10pt;
+    line-height: 16pt;
+  }
+}
+
 //ANIMATIONS
 @-webkit-keyframes toBottomFromTop {
   49% {
@@ -815,6 +918,21 @@ section.connect {
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes flipIn {
+  0% {
+    transform: scale(0,0);
+  }
+  50% {
+    transform: scale(1.2,1.2)
+  }
+  70% {
+    transform: scale(0.9, 0.9)
+  }
+  100% {
+    transform: scale(1, 1)
   }
 }
 
