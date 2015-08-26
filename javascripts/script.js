@@ -3,114 +3,141 @@ $(document).ready(function(){
   var modalText = {
     roambi: {
       header: 'Roambi.com',
-      color: '#FF8FBD',
-      detail: 'Visual data and analytics for big business.',
-      bullets: ['Wordpress','Visual Analytics','Hubspot Integration']
+      detail: 'Roambi provides analytics, reporting, and business intelligence for companies to use on the go.',
+      bullets: ['Wordpress','Visual Analytics','Hubspot Integration'],
     },
     walker: {
       header: 'WalkerTracker',
-      color: '#81FFCC',
-      detail: 'Fitness Tracking for big business.',
-      bullets: ['Device Integration','Visual Analytics','Gamification']
+      detail: 'Walker Tracker offers goal management, fitness tracking, and team competitions to companies for internal use.',
+      bullets: ['Gamification','Visual Analytics','Device Integration']
     },
     powur: {
       header: 'Powur.com',
-      color: '#8BE7FF',
-      detail: 'Solar Panel MLM Platform.',
+      detail: 'Powur is a multi-level marketing platform for lead generation, recruitment, and team building.',
       bullets: ['Rails App','Visual Analytics','Team Tree Management']
     },
     mystand: {
       header: 'MyStand',
-      color: '#FF4E4E',
-      detail: 'Social Media charity platform',
-      bullets: ['Social Networking','Media Sharing','Gamfication']
+      detail: 'MyStand is a crowd-funding, media sharing website, that has you donating actions instead of money out of your pocket.',
+      bullets: ['Social Networking','Media Sharing','Crowd-funding']
     },
     never: {
       header: 'NeverSurrender',
-      color: '#FFD2E0',
-      detail: 'ALS foundation website.',
-      bullets: ['Single Page App','Visual Effects','Mobile Device Support']
+      detail: 'NeverSurrender is a platform for the new ALS foundation mobile app in hopes to raise awareness and research funding to fight ALS.',
+      bullets: ['Single Page App','Parallax Effects','Fluid Design']
     },
-  }
+  };
 
   $(document).foundation();
-  jQuery('.scrollbar-outer').scrollbar();
+
+  var slider = $('#projects-carousel');
 
   function initCarousel() {
     var slidesToShow = 3;
+    if ($(window).width() < 800) slidesToShow = 2;
     if ($(window).width() < 650) slidesToShow = 1;
     $('.projects').show();
-    $('.carousel').slick({
+    $(slider).slick({
       centerMode: true,
       infinite: true,
       slidesToShow: slidesToShow,
-      dotsCount: 4,
       slidesToScroll: 1,
       autoplay: false,
-      autoplaySpeed: 2000,
-      // dots: true,
+      dots: true,
+      dotsCount: 4,
       arrows: false,
       focusOnSelect: true,
-      speed: 700
+      pauseOnHover: true,
+      speed: 700,
+      autoplaySpeed: 2500
     });
-    $('.carousel').slick('slickPlay');
+    $(slider).slick('slickPlay');
+    setTimeout(function(){
+      $(slider).slick("slickNext");
+    },400);
   }
 
   function destroyCarousel() {
     if (!$('.projects').is(":visible")) return;
-    $('.carousel').slick('unslick');
+    $(slider).slick('unslick');
     $('.projects').hide();
   }
 
+  var windowWidth = $(window).width();
+
   $(window).resize(function(){
-    if(!$('.projects').hasClass('active') || $(window).width() > 650) return;
-    destroyCarousel()
+    if(!$('.projects').hasClass('active') || windowWidth === $(window).width()) return;
+    destroyCarousel();
     initCarousel();
-  })
-
-  var dragging;
-
-  $('.slide-img').mousedown(function(){
-    dragging = false;
-    setTimeout(function(){
-      dragging = true;
-    }, 500)
   });
 
-  $('.slide-img').mouseup(function(){
-    if (!$(this).parent().is('.slick-current')) return;
+  $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
+    setTimeout(function(){
+      $(slider).slick("slickNext");
+    },400);
+  });
+
+
+  $('.modaler').click(function(){
+    if (!$(this).parent().parent().is('.slick-current')) return;
+    $('.top').css('transform','scale(1,1) translateY(0%)');
     var id = $(this).attr('id');
-    if (!dragging) {
       fillModal(id);
       $('#modal').foundation('reveal', 'open');
-      $('.carousel').slick('slickPause');
-    }
-  })
+      setTimeout(function(){ $('#modal-carousel').slick({
+        adaptiveHeight: true,
+        arrows: true,
+        prevArrow: '<i class="fa fa-chevron-left"></i>',
+        nextArrow: '<i class="fa fa-chevron-right"></i>'
+      }); }, 130);
+  });
+
+  $('.slide-wrap').mouseover(function(){
+    $(slider).slick('slickPause');
+  });
+
+  $('.projects').click(function(){
+    $(slider).slick('slickPause');
+  });
+
+  $('.slide-wrap').mouseover(function(){
+    if (!$(this).parent().is('.slick-current')) return;
+    $(this).find('.top').css('transform','scale(0.6,0.6) translateY(-20%)');
+  });
+
+  $('.slide-wrap').mouseleave(function(){
+   $(this).find('.top').css('transform','scale(1,1) translateY(0%)');
+  });
+
 
   function fillModal(id) {
-    $('#modal').find('.header').text(modalText[id].header)
-                               .css('color',modalText[id].color)
-    $('#modal').find('.detail').text(modalText[id].detail)
+    if ($('#modal-carousel').is('.slick-initialized')) {
+      $('#modal-carousel').slick('unslick');
+    }
+    $('#modal').find('.header').text(modalText[id].header);
+
+    $('#modal').find('.detail').text(modalText[id].detail);
 
     $.each($('#modal').find('li'), function(index, value ) {
-      $(this).text(modalText[id].bullets[index])
+      $(this).text(modalText[id].bullets[index]);
     });
-    $('.modal-img').attr('src','images/logos/'+ id + '-full.jpg')
+    $.each($('#modal').find('.slide'), function(index, value) {
+      $(this).children('img').attr('src', 'images/slides/' + id + '-' + index + '.jpg');
+    });
+    
   }
 
-  $('.slide-img').click(function(){
-    $('.carousel').slick('slickPause');
-  })
-
-  $('.landing-sect span').fadeIn(8000);
+  $('.landing-sect span').fadeTo(8000, 1);
 
   $('.p1').on('click', function(){
     $('.icon-box').show();
     if ($(this).hasClass('active')) return;
     $('.connect').addClass('active');
     $('.p1').addClass('extend');
+
     $('.p2, .p4').addClass('shutter');
     $('.p3').addClass('clear extend');
+    $('.icon').addClass('pop-in');
   });
 
   $('.p2').on('click', function(){
@@ -126,13 +153,12 @@ $(document).ready(function(){
 
   $('.p3').on('click', function(){
     if ($(this).is('.active, .clear, .start')) return;
-    // $('.clouds').hide();
     $('.projects').show();
     $('.projects').addClass('active');
     initCarousel();
     var id = parseInt($(this).attr('id'));
     $(this).addClass('extend');
-    shutterPanels(id)
+    shutterPanels(id);
   });
 
   $('.p4').on('click', function(){
@@ -153,11 +179,12 @@ $(document).ready(function(){
   });
 
   $('.logo').on('click', function(){
+    $(this).removeClass('shake');
     if ($('.p1, .p2, .p3, .p4').hasClass('shutter')) {
       returnPanels();
     } else {
       $('.p3').addClass('start');
-      $('.clouds.inverse').fadeIn();
+      $('.clouds.inverse').fadeIn(300);
       shutterPanels(0);
     }
   });
@@ -173,7 +200,6 @@ $(document).ready(function(){
   });
 
   function shutterPanels(id) {
-    hideClouds();
     if (!id) $('.landing-sect').removeClass('shutter');
     var n = id;
     for (var i = 0; i < 4; i++) {
@@ -191,11 +217,16 @@ $(document).ready(function(){
   }
 
   function returnPanels() {
-    $('.clouds').fadeIn();
-    $('.clouds.inverse, .stack, .about-box').hide();
-    setTimeout(function(){ destroyCarousel(); },300)
+    $('.clouds.inverse').hide();
+
+    setTimeout(function(){ 
+      $('.about-box').hide();
+      $('.icon').removeClass('pop-in');
+      destroyCarousel(); 
+    },300);
     $('.landing-sect').addClass('shutter');
     $('section').removeClass('active');
+
     for (var i = 1; i < 5; i++) {
       $('#'+i).removeClass('shutter clear extend retract start active');
     }
