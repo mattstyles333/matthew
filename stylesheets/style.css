@@ -526,7 +526,7 @@ section.connect .icon-box {
   .landing-sect .tag-box .center {
     margin: 0 70px; }
 .landing-sect.shutter {
-  opacity: 0; }
+  display: none; }
 
 .square {
   text-align: center;

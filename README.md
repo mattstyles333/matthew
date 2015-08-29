@@ -1,16 +1,11 @@
 # portfolio
 
 ##FOR LAUNCH
-* Improve Cloud Images
-* Favicon / Title
 
 * IE Testing
 * Mobile Testing
 * Tablet Testing
 * Redo Angular badge (keep html5?)
-
-* Firefox badges only animate once
-* Fix logo positioning
 
 ##EVENTUAL
 * Refactor CSS
