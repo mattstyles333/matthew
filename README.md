@@ -2,11 +2,15 @@
 
 ##FOR LAUNCH
 * Improve Cloud Images
+* Favicon / Title
 
 * IE Testing
 * Mobile Testing
 * Tablet Testing
 * Redo Angular badge (keep html5?)
+
+* Firefox badges only animate once
+* Fix logo positioning
 
 ##EVENTUAL
 * Refactor CSS
@@ -14,8 +18,8 @@
 * Refactor HTML
 
 * Add ms-webkits
-* Make P3 extend instead of starting with width: 100%
 * Improve Vertical Responsiveness
+* better Roambi pictures (from main site!)
 * Refine Slide Autoplay (dots click pause)
 * Fix About-Me Pane Gradient (OR use it on other panes!)
 * Fine Tune Cloud Parallax
