@@ -2,10 +2,11 @@
 
 ##FOR LAUNCH
 
-* IE Testing
+* IE Testing (on real PC)
 * Mobile Testing
 * Tablet Testing
 * Redo Angular badge (keep html5?)
+* Preloader
 
 ##EVENTUAL
 * Refactor CSS
