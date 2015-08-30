@@ -89,7 +89,7 @@ $(document).ready(function(){
         arrows: true,
         prevArrow: '<i class="fa fa-chevron-left"></i>',
         nextArrow: '<i class="fa fa-chevron-right"></i>'
-      }); }, 150);
+      }); }, 200);
   });
 
   $('.slide-wrap').mouseover(function(){
