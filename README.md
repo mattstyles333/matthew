@@ -3,9 +3,11 @@
 ##FOR LAUNCH
 
 * IE Testing (on real PC)
+* Arrow Navigation (remove dots?)
 * Mobile Testing
 * Tablet Testing
 * Redo Angular badge (keep html5?)
+* Fix modal loading issue
 * Preloader
 
 ##EVENTUAL

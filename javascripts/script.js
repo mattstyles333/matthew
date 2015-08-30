@@ -84,12 +84,16 @@ $(document).ready(function(){
     var id = $(this).attr('id');
       fillModal(id);
       $('#modal').foundation('reveal', 'open');
-      setTimeout(function(){ $('#modal-carousel').slick({
-        adaptiveHeight: true,
-        arrows: true,
-        prevArrow: '<i class="fa fa-chevron-left"></i>',
-        nextArrow: '<i class="fa fa-chevron-right"></i>'
-      }); }, 200);
+  });
+
+
+  $(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
+    $('#modal-carousel').slick({
+      adaptiveHeight: true,
+      arrows: true,
+      prevArrow: '<i class="fa fa-chevron-left"></i>',
+      nextArrow: '<i class="fa fa-chevron-right"></i>'
+    });
   });
 
   $('.slide-wrap').mouseover(function(){

@@ -61,6 +61,8 @@ a {
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+    max-height: 50vh;
+    overflow: hidden;
   }
   
   .slide img {
@@ -638,7 +640,7 @@ section.connect {
     left: 0;
     right: 0;
     text-align: center;
-    font-size: 15pt;
+    font-size: 14pt;
     font-weight: 300;
 
     .center {
