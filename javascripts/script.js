@@ -82,8 +82,8 @@ $(document).ready(function(){
     if (!$(this).parent().parent().is('.slick-current')) return;
     $('.top').css('transform','scale(1,1) translateY(0%)');
     var id = $(this).attr('id');
-      fillModal(id);
-      $('#modal').foundation('reveal', 'open');
+    $('#modal').foundation('reveal', 'open');
+    fillModal(id);
   });
 
 
