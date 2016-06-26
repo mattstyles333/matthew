@@ -1,29 +1,32 @@
-# portfolio
 
-##FOR LAUNCH
-* Redo Angular badge (keep html5?)
-* Preloader
-* Fix About-Me Pane Gradient (OR use it on other panes!)
-* Smaller jpgs for smaller screens
+SECONDARY:
+Animate 'back-to-top' arrow on hover
+Gallery background needs to be white
 
-##EVENTUAL
-* Refactor CSS
-* Refactor HTML
-* Improve Vertical Responsiveness
-* Fine Tune Cloud Parallax
-* Refine Modal Text
-* Replace CDN links with actual files
-* Fix modal loading issue
-* Second JS Refactor
+OPTIMIZE: 
+Pause Canvas when out of view
+Loading Animation
+Optimize image sizes
 
-##OPTIONAL
-* Badges with hard edges
-* improve modal design
-* Pane Hover state
-* Try out different font family
-* Flip animation (front/back) for social icons
-* Exit Animations
-* Replace card shrink with card flip
-* Seperate Mobile Version
-* Remove Foundation / Carousel
+CLEAN UP:
+Remove excess files
+Organize folders better
 
+Spell Check
+Refactor CSS
+Refactor HTML
+Refactor JS - simplify modal fill function
+
+Browser Retest
+
+MAYBE:
+carousel bug??
+Invision Color Scheme?
+Add humor?
+Fancy button hover animation?
+Gifs for powur homepage and neversurrender preview? 
+DL my resume Link?
+Navbar border hue animation?
+Customize intro animation
+Interactive intro animation?
+Loading animation?
