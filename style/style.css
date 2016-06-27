@@ -581,7 +581,7 @@ section {
         section:nth-of-type(3) #gallery .mix .card {
           height: 240px;
           max-width: 100%;
-          width: 320px;
+          width: calc(50vw - 8px);
           cursor: pointer;
           transition: opacity .5s; }
         section:nth-of-type(3) #gallery .mix:hover .card {
@@ -664,7 +664,7 @@ section {
       left: 0; }
     section:nth-of-type(5) form {
       margin: 40px auto 0 auto;
-      min-width: 500px; }
+      min-width: 95%; }
     section:nth-of-type(5) input[type="text"], section:nth-of-type(5) input[type="email"], section:nth-of-type(5) textarea {
       display: block;
       width: 100%;
@@ -763,6 +763,9 @@ footer {
       font-family: 'Open Sans';
       color: #E31B6D; }
 
+@media screen and (max-width: 400px) {
+  section:nth-of-type(3) #gallery .mix .card {
+    width: 100vw; } }
 @media screen and (min-width: 600px) {
   body {
     font-size: 12pt; }
@@ -856,13 +859,12 @@ footer {
       font-size: 40pt; }
     section:nth-of-type(3) .filter {
       font-size: 11pt;
-      margin: 0 25px;
+      margin: 0 15px;
       padding: 0 30px; }
     section:nth-of-type(3) .float-bar {
       height: 30px; }
     section:nth-of-type(3) #gallery .mix .card {
-      height: 300px;
-      width: 390px; }
+      height: 300px; }
     section:nth-of-type(4) {
       padding: 130px 0 180px 0; }
       section:nth-of-type(4) .label {
@@ -878,7 +880,9 @@ footer {
       section:nth-of-type(4) .blog-wrap {
         width: 400px; }
       section:nth-of-type(4) .thumb {
-        height: 200px; } }
+        height: 200px; }
+    section:nth-of-type(5) form {
+      min-width: 500px; } }
 @media screen and (min-width: 960px) {
   .waypoint {
     opacity: 0; }
@@ -948,9 +952,12 @@ footer {
     margin: 0;
     padding: 0 10px;
     height: intial; }
+  section:nth-of-type(3) #gallery .mix .card {
+    width: 390px; }
   section:nth-of-type(3) .filter {
     font-size: 13pt;
-    padding: 0 40px; }
+    padding: 0 40px;
+    margin: 0 25px; }
   section:nth-of-type(4) .blog-wrap {
     width: 400px;
     margin: 0 0 0 20px; } }
