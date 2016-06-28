@@ -216,7 +216,7 @@ nav {
     transition: height .3s ease-out;
     text-align: center; }
     nav .link-wrap.visible {
-      height: 183px; }
+      height: 165px; }
     nav .link-wrap div {
       margin: 15px 20px;
       cursor: pointer;
@@ -727,7 +727,10 @@ footer {
     left: 0;
     right: 0;
     margin: 0 auto;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: background .5s; }
+    footer .mdi-chevron-double-up:hover {
+      background: #fb1f79; }
   footer .icon-wrap .icon {
     overflow: hidden;
     transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
