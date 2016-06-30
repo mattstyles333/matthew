@@ -822,7 +822,7 @@ section {
       margin: 0 0 50px 0;
       padding: 0 2px;
       width: 100%;
-      transition: opacity .3s ease-in-out;
+      opacity: 0;
       cursor: pointer;
 
       @for $i from 1 through 4 {
@@ -831,16 +831,17 @@ section {
         }
       }
 
-      &.fade {
+      .fade-wrap {
+        transition: opacity .3s;
+      }
+
+      &.fade .fade-wrap {
         opacity: 0.4;
       }
 
-      &.hover {
+      &.hover .fade-wrap {
         .label {
           color: $primary;
-        }
-        a {
-          opacity: 1;
         }
       }
     }
@@ -1306,9 +1307,6 @@ footer {
     &.slide-in-left {
       animation: slideInLeft .75s ease both;
     }
-    // &.slide-in-left-big {
-    //   animation: slideInLeftBig .75s ease both;
-    // }
     &.slide-in-right {
       animation: slideInRight .75s ease both;
     }

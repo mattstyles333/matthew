@@ -609,7 +609,7 @@ section {
       margin: 0 0 50px 0;
       padding: 0 2px;
       width: 100%;
-      transition: opacity .3s ease-in-out;
+      opacity: 0;
       cursor: pointer; }
       section:nth-of-type(4) .blog-wrap #thumb-1 {
         background: url("../img/blog-1.jpg") center center/cover; }
@@ -619,12 +619,12 @@ section {
         background: url("../img/blog-3.jpg") center center/cover; }
       section:nth-of-type(4) .blog-wrap #thumb-4 {
         background: url("../img/blog-4.jpg") center center/cover; }
-      section:nth-of-type(4) .blog-wrap.fade {
+      section:nth-of-type(4) .blog-wrap .fade-wrap {
+        transition: opacity .3s; }
+      section:nth-of-type(4) .blog-wrap.fade .fade-wrap {
         opacity: 0.4; }
-      section:nth-of-type(4) .blog-wrap.hover .label {
+      section:nth-of-type(4) .blog-wrap.hover .fade-wrap .label {
         color: #04C2C9; }
-      section:nth-of-type(4) .blog-wrap.hover a {
-        opacity: 1; }
     section:nth-of-type(4) .label {
       line-height: 14pt;
       font-size: 12pt;

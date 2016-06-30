@@ -82,8 +82,8 @@ $(function() {
   });
 
   $('.blog-wrap').hover(  function() {
-    $('.blog-wrap').addClass('fade');
-    $( this ).addClass( "hover" ).removeClass('fade');
+    $('.blog-wrap').not(this).addClass('fade');
+    $( this ).addClass( "hover" );
   }, function() {
     $( this ).removeClass( "hover" );
     $('.blog-wrap').removeClass('fade');
