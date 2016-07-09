@@ -199,7 +199,8 @@ nav {
   background: #1B242F;
   border-bottom: 3px solid #04C2C9;
   text-align: left;
-  z-index: 99; }
+  z-index: 99;
+  display: block; }
   nav.fixed {
     top: 0;
     left: 0;
@@ -814,19 +815,21 @@ footer {
   .modal-wrap .button {
     left: 25px; }
 
-  nav .link-wrap {
-    position: initial;
-    background: none;
-    overflow: visible;
-    height: initial;
-    text-align: left; }
-    nav .link-wrap .visible {
-      height: initial; }
-    nav .link-wrap div {
-      margin: 0 20px;
-      display: inline; }
-  nav .mdi-menu {
-    display: none; }
+  nav {
+    display: flex; }
+    nav .link-wrap {
+      position: initial;
+      background: none;
+      overflow: visible;
+      height: initial;
+      text-align: left; }
+      nav .link-wrap .visible {
+        height: initial; }
+      nav .link-wrap div {
+        margin: 0 20px;
+        display: inline; }
+    nav .mdi-menu {
+      display: none; }
 
   section {
     line-height: 18pt;

@@ -103,17 +103,6 @@ $secondary-dark: #C51675;
   }
 }
 
-// @keyframes slideInLeftBig {
-//   0% { 
-//     opacity: 0;
-//     transform: translateX(-90vw) 
-//   }
-//   100% {
-//     opacity: 1;
-//     transform: translateX(0) 
-//   }
-// }
-
 @keyframes slideInRight {
   0% { 
     opacity: 0;
@@ -297,6 +286,7 @@ nav {
   border-bottom: 3px solid $primary;
   text-align: left;
   z-index: 99;
+  display: block;
 
   &.fixed {
     @include pos($pos: fixed, $top: 0, $left: 0);
@@ -1125,6 +1115,8 @@ footer {
   }
 
   nav {
+    display: flex;
+    
     .link-wrap {
       position: initial;
       background: none;

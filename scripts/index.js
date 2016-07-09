@@ -12,7 +12,7 @@ $(function() {
 
   // Sticky Nav on Mobile
   if (isMobile) {
-    $('nav').css('animation','none').addClass('fixed');
+    $('nav').css('animation','inherit').addClass('fixed');
   }
 
 
