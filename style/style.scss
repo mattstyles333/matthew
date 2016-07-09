@@ -290,7 +290,7 @@ nav {
 
   &.fixed {
     @include pos($pos: fixed, $top: 0, $left: 0);
-    animation: popDown .5s;
+    animation: inherit;
     display: block;
   }
 
@@ -1118,6 +1118,7 @@ footer {
   nav {
     .fixed {
       display: flex;
+      animation: popDown .5s;
     }
 
     .link-wrap {
