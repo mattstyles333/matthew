@@ -199,13 +199,13 @@ nav {
   background: #1B242F;
   border-bottom: 3px solid #04C2C9;
   text-align: left;
-  z-index: 99;
-  display: block; }
+  z-index: 99; }
   nav.fixed {
     top: 0;
     left: 0;
     position: fixed;
-    animation: popDown .5s; }
+    animation: popDown .5s;
+    display: block; }
   nav .link-wrap {
     max-width: 1200px;
     width: 100%;
@@ -610,7 +610,6 @@ section {
       margin: 0 0 50px 0;
       padding: 0 2px;
       width: 100%;
-      opacity: 0;
       cursor: pointer; }
       section:nth-of-type(4) .blog-wrap #thumb-1 {
         background: url("../img/blog-1.jpg") center center/cover; }
@@ -815,21 +814,21 @@ footer {
   .modal-wrap .button {
     left: 25px; }
 
-  nav {
+  nav .fixed {
     display: flex; }
-    nav .link-wrap {
-      position: initial;
-      background: none;
-      overflow: visible;
-      height: initial;
-      text-align: left; }
-      nav .link-wrap .visible {
-        height: initial; }
-      nav .link-wrap div {
-        margin: 0 20px;
-        display: inline; }
-    nav .mdi-menu {
-      display: none; }
+  nav .link-wrap {
+    position: initial;
+    background: none;
+    overflow: visible;
+    height: initial;
+    text-align: left; }
+    nav .link-wrap .visible {
+      height: initial; }
+    nav .link-wrap div {
+      margin: 0 20px;
+      display: inline; }
+  nav .mdi-menu {
+    display: none; }
 
   section {
     line-height: 18pt;
@@ -884,7 +883,8 @@ footer {
         font-size: 11pt;
         line-height: 15pt; }
       section:nth-of-type(4) .blog-wrap {
-        width: 400px; }
+        width: 400px;
+        opacity: 0; }
       section:nth-of-type(4) .thumb {
         height: 200px; }
     section:nth-of-type(5) form {

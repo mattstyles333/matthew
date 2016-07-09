@@ -286,11 +286,11 @@ nav {
   border-bottom: 3px solid $primary;
   text-align: left;
   z-index: 99;
-  display: block;
 
   &.fixed {
     @include pos($pos: fixed, $top: 0, $left: 0);
     animation: popDown .5s;
+    display: block;
   }
 
   .link-wrap {
@@ -812,7 +812,6 @@ section {
       margin: 0 0 50px 0;
       padding: 0 2px;
       width: 100%;
-      opacity: 0;
       cursor: pointer;
 
       @for $i from 1 through 4 {
@@ -1115,8 +1114,10 @@ footer {
   }
 
   nav {
-    display: flex;
-    
+    .fixed {
+      display: flex;
+    }
+
     .link-wrap {
       position: initial;
       background: none;
@@ -1254,7 +1255,8 @@ footer {
       }
 
       .blog-wrap {
-        width: 400px
+        width: 400px;
+        opacity: 0;
       }
 
       .thumb {
