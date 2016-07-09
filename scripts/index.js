@@ -125,14 +125,14 @@ $(function() {
             'animation-delay':          animationDelay
           });
 
-          var trigger = ( elemTrigger ) ? trigger : elem;
+          var trigger = (elemTrigger) ? trigger : elem;
           
           trigger.waypoint(function() {
             elem.addClass('animated').addClass(animationClass);
             if (elem.get(0).id === 'gallery') mixClear(); //OPTIONAL
             },{
                 triggerOnce: true,
-                offset: '80%'
+                offset: 600
           });
     });
   }

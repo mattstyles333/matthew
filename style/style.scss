@@ -156,7 +156,6 @@ body {
   text-align: center;
   margin: 0px;
   font-size: 8pt;
-  padding: 53px 0 0 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -290,8 +289,7 @@ nav {
 
   &.fixed {
     @include pos($pos: fixed, $top: 0, $left: 0);
-    animation: inherit;
-    display: block;
+    animation: popDown .5s;
   }
 
   .link-wrap {
@@ -797,7 +795,7 @@ section {
     padding: 130px 0 100px 0;
     text-align: left;
 
-    .flex.wrap {
+    .flex.row-gt-sm, .flex.wrap {
       align-items: flex-start;
     }
 
@@ -1051,7 +1049,6 @@ footer {
 
   body {
     font-size: 12pt;
-    padding: 0;
   }
 
   .container {
@@ -1116,11 +1113,6 @@ footer {
   }
 
   nav {
-    .fixed {
-      display: flex;
-      animation: popDown .5s;
-    }
-
     .link-wrap {
       position: initial;
       background: none;
@@ -1258,8 +1250,7 @@ footer {
       }
 
       .blog-wrap {
-        width: 400px;
-        opacity: 0;
+        width: 400px
       }
 
       .thumb {
@@ -1381,7 +1372,8 @@ footer {
     &:nth-of-type(4) {
       .blog-wrap {
         width: 400px;
-        margin: 0 0 0 20px;
+        margin: 0 0 50px 20px;
+        opacity: 0;
       }
     }
   }
@@ -1392,7 +1384,7 @@ footer {
     &:nth-of-type(4) {
       .blog-wrap {
         width: 270px;
-        margin: 0 0 0 20px;
+        margin: 0 0 50px 20px;
       }
     }
   }
