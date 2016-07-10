@@ -13,6 +13,8 @@ $(function() {
   // Sticky Nav on Mobile
   if (isMobile) {
     $('nav').addClass('fixed');
+  } else {
+    $('nav').addClass('desk');
   }
 
 

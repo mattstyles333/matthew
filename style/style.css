@@ -202,9 +202,9 @@ nav {
   z-index: 99; }
   nav.fixed {
     top: 0;
-    left: 0;
-    position: fixed;
-    animation: popDown .5s; }
+    position: fixed; }
+    nav.fixed.desk {
+      animation: popDown .5s; }
   nav .link-wrap {
     max-width: 1200px;
     width: 100%;

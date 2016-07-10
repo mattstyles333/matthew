@@ -288,8 +288,10 @@ nav {
   z-index: 99;
 
   &.fixed {
-    @include pos($pos: fixed, $top: 0, $left: 0);
-    animation: popDown .5s;
+    @include pos($pos: fixed, $top: 0);
+    &.desk {
+      animation: popDown .5s;
+    }
   }
 
   .link-wrap {
