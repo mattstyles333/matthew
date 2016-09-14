@@ -288,7 +288,7 @@ nav {
   z-index: 99;
 
   &.fixed {
-    @include pos($pos: fixed, $top: 0);
+    @include pos($pos: fixed, $top: 0, $bottom: inherit, $left: 0);
     &.desk {
       animation: popDown .5s;
     }
@@ -303,14 +303,17 @@ nav {
     overflow: hidden;
     height: 0;
     transition: height .3s ease-out;
-    text-align: center;
 
     &.visible {
-      height: 165px;
+      height: 220px;
     }
 
     div {
-      margin: 15px 20px;
+      &:first-child {
+        padding: 25px 20px 12px 20px;
+      }
+      padding: 12px 20px;
+      font-size: 12pt;
       cursor: pointer;
       transition: color .5s;
       text-transform: uppercase;
@@ -1127,7 +1130,12 @@ footer {
       }
 
       div {
+        &:first-child {
+          padding: 0;
+        }
         margin: 0 20px;
+        padding: initial;
+        font-size: initial;
         display: inline;
       }
     }

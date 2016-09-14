@@ -202,6 +202,8 @@ nav {
   z-index: 99; }
   nav.fixed {
     top: 0;
+    bottom: inherit;
+    left: 0;
     position: fixed; }
     nav.fixed.desk {
       animation: popDown .5s; }
@@ -213,15 +215,17 @@ nav {
     background: #333;
     overflow: hidden;
     height: 0;
-    transition: height .3s ease-out;
-    text-align: center; }
+    transition: height .3s ease-out; }
     nav .link-wrap.visible {
-      height: 165px; }
+      height: 220px; }
     nav .link-wrap div {
-      margin: 15px 20px;
+      padding: 12px 20px;
+      font-size: 12pt;
       cursor: pointer;
       transition: color .5s;
       text-transform: uppercase; }
+      nav .link-wrap div:first-child {
+        padding: 25px 20px 12px 20px; }
       nav .link-wrap div:hover {
         color: #E31B6D; }
   nav .mdi-menu {
@@ -823,7 +827,11 @@ footer {
       height: initial; }
     nav .link-wrap div {
       margin: 0 20px;
+      padding: initial;
+      font-size: initial;
       display: inline; }
+      nav .link-wrap div:first-child {
+        padding: 0; }
   nav .mdi-menu {
     display: none; }
 

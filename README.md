@@ -12,12 +12,11 @@ Refactor JS - simplify modal fill function
 Browser Retest
 
 MAYBE:
-carousel bug??
+mysterious carousel bug
 Animate 'back-to-top' arrow on hover
-Add elacticity to portfolio bar
+Add elasticity to portfolio bar
 Wipe button animation - http://tympanus.net/Development/ButtonStylesInspiration/
 Gifs for powur homepage and neversurrender preview?
-Invision Color Scheme?
 Add humor
 DL my resume Link
 Navbar border hue animation
