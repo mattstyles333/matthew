@@ -72,20 +72,20 @@ $secondary-dark: #C51675;
 }
 
 @keyframes slideUp {
-  0% { 
-    transform: translateY(300px) 
+  0% {
+    transform: translateY(300px)
   }
-  100% { 
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes slideDown {
-  0% { 
-    transform: translateY(-300px) 
+  0% {
+    transform: translateY(-300px)
   }
-  100% { 
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -93,24 +93,24 @@ $secondary-dark: #C51675;
 
 
 @keyframes slideInLeft {
-  0% { 
+  0% {
     opacity: 0;
-    transform: translateX(-300px) 
+    transform: translateX(-300px)
   }
   100% {
     opacity: 1;
-    transform: translateX(0) 
+    transform: translateX(0)
   }
 }
 
 @keyframes slideInRight {
-  0% { 
+  0% {
     opacity: 0;
-    transform: translateX(300px) 
+    transform: translateX(300px)
   }
   100% {
     opacity: 1;
-    transform: translateX(0) 
+    transform: translateX(0)
   }
 }
 
@@ -175,7 +175,6 @@ body {
   left: 0;
   width: 100vw;
   height: 100%;
-  z-index: -1;
   background: url('../img/filler.png') center center/cover;
 }
 
@@ -516,7 +515,7 @@ section {
     box-sizing: border-box;
   }
 
-  //HOME 
+  //HOME
   &:nth-of-type(1) {
     padding: 0 10px;
     color: #fff;
@@ -530,6 +529,8 @@ section {
       margin: 0 0 20px 0;
       font-size: 16pt;
       line-height: 20pt;
+      z-index: 1;
+      pointer-events: none;
     }
 
     .hexagon {
@@ -543,7 +544,7 @@ section {
       padding: 12px 40px 12px 15px;
       position: relative;
       margin-bottom: 53px;
-      
+
       .mdi {
         transition: transform .3s;
         position: absolute;
@@ -562,7 +563,7 @@ section {
 
   //ABOUT
   &:nth-of-type(2) {
-    
+
     .label-wrap {
 
       .label {
@@ -694,7 +695,7 @@ section {
       margin: auto 0;
       position: absolute;
       overflow: hidden;
-      height: 25px; 
+      height: 25px;
       border-radius: 1px;
       background: $secondary;
       transition: all .5s ease-in-out;
@@ -710,7 +711,7 @@ section {
       }
     }
 
-    .text { 
+    .text {
       @include pos($top: 0, $left: 0);
       width: 100%;
     }
@@ -730,7 +731,7 @@ section {
         }
       }
 
-      .button { 
+      .button {
         @include pos($bottom: 0, $left: 0, $right: 0);
         border: 2px solid $secondary;
         width: 170px;
@@ -753,7 +754,7 @@ section {
             color: #fff;
           }
         }
-        
+
         @for $i from 1 through 12 {
           &:nth-child(#{$i}) {
             .card {
@@ -768,7 +769,7 @@ section {
           width: calc(50vw - 8px);
           cursor: pointer;
           transition: opacity .5s;
-          
+
         }
 
         &:hover {
@@ -791,7 +792,7 @@ section {
 
     }
   }
-  
+
   .flex-50-gt-sm { display: block;}
 
 
@@ -1033,7 +1034,7 @@ footer {
     color: #8F9AA7;
     margin-top: 35px;
     opacity: 0.6;
-    
+
     .highlight {
       font-family: 'Open Sans';
       color: $secondary;
@@ -1153,7 +1154,7 @@ footer {
       padding: 0 10px;
     }
 
-    // HOME 
+    // HOME
     &:nth-of-type(1) {
       .text {
         font-size: 32pt;
@@ -1162,7 +1163,7 @@ footer {
 
       .button {
         padding: 12px 50px 12px 20px;
-        
+
         .mdi {
           top: 16px;
         }
@@ -1226,7 +1227,7 @@ footer {
       }
 
       .float-bar {
-        height: 30px; 
+        height: 30px;
       }
 
       #gallery {
@@ -1366,7 +1367,7 @@ footer {
         padding: 0 10px;
         height: intial;
       }
-    } 
+    }
 
     &:nth-of-type(3) {
       #gallery .mix .card {
