@@ -161,6 +161,10 @@ body {
   overflow-x: hidden;
 }
 
+#preload {
+  display: none;
+}
+
 .disable-hover {
   pointer-events: none;
 }
@@ -274,6 +278,11 @@ body {
 .label {
   font-size: 14pt;
   font-weight: 500;
+}
+
+.resume {
+  background: #455261;
+  height: 100px;
 }
 
 // NAV

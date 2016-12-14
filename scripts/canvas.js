@@ -1,10 +1,6 @@
 var space;
 
 function floatySpace() {
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-   return;
-  }
-
   var colors = [
     "#FF3F8E", "#04C2C9", "#2E55C1"
   ];
@@ -54,8 +50,6 @@ function floatySpace() {
           if (pts[i].brightness > 0.1) pts[i].brightness -= 0.01
         }
 
-
-
         var color = "rgba(255,255,255," + pts[i].brightness +")"
         form.stroke(color).fill( true ).line(ln);
       }
@@ -68,7 +62,7 @@ function floatySpace() {
     },
 
     onTouchAction: function(type, x, y, evt) {
-      this.onMouseAction( type, x, y );
+      this.onMouseAction(type, x, y);
     }
   });
 

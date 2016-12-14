@@ -27,7 +27,7 @@ $(function() {
   // NAV POSITION
   var navPos = $('nav').position().top;
   var lastPos = 0;
-  var lockTimer 
+  var lockTimer
 
   $(window).on('scroll', function () {
 
@@ -43,15 +43,15 @@ $(function() {
         $('nav').removeClass('fixed');
       }
       lastPos = pos;
-    } 
+    }
 
     // Link Highlighting
     if (pos2 > $('#home').offset().top)       { highlightLink('home'); }
     if (pos2 > $('#about').offset().top)      { highlightLink('about'); }
     if (pos2 > $('#portfolio').offset().top)  { highlightLink('portfolio'); }
     if (pos2 > $('#blog').offset().top)       { highlightLink('blog'); }
-    if (pos2 > $('#contact').offset().top || 
-        pos + $(window).height() === $(document).height()) { 
+    if (pos2 > $('#contact').offset().top ||
+        pos + $(window).height() === $(document).height()) {
           highlightLink('contact');
     }
 
@@ -60,7 +60,7 @@ $(function() {
     if(!$('body').hasClass('disable-hover')) {
       $('body').addClass('disable-hover')
     }
-    
+
     lockTimer = setTimeout(function(){
       $('body').removeClass('disable-hover')
     }, 500);
@@ -122,6 +122,7 @@ $(function() {
 
   // SCROLL ANIMATIONS
   function onScrollInit( items, elemTrigger ) {
+    var offset = $(window).height() / 1.6
     items.each( function() {
       var elem = $(this),
           animationClass = elem.attr('data-animation'),
@@ -134,13 +135,13 @@ $(function() {
           });
 
           var trigger = (elemTrigger) ? trigger : elem;
-          
+
           trigger.waypoint(function() {
             elem.addClass('animated').addClass(animationClass);
             if (elem.get(0).id === 'gallery') mixClear(); //OPTIONAL
             },{
                 triggerOnce: true,
-                offset: 600
+                offset: offset
           });
     });
   }
@@ -149,10 +150,10 @@ $(function() {
 
   // CONTACT FORM
   $('#contact-form').submit(function(e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
       $.ajax({
-          url: "https://formspree.io/mattwilliams85@gmail.com", 
+          url: "https://formspree.io/mattwilliams85@gmail.com",
           method: "POST",
           data: { message: $('form').serialize() },
           dataType: "json"
