@@ -7,11 +7,11 @@ $secondary-light: #fb1f79;
 $secondary-dark: #C51675;
 
 @mixin pos($pos: absolute, $top: null, $left: null, $bottom: null, $right: null) {
-  top: $top;
-  right: $right;
   bottom: $bottom;
   left: $left;
   position: $pos;
+  right: $right;
+  top: $top;
 }
 
 @font-face {
@@ -35,24 +35,24 @@ $secondary-dark: #C51675;
 
 @keyframes flipInX {
   from {
-    -webkit-transform: perspective(400px) rotateY(90deg);
-    transform: perspective(400px) rotateY(90deg);
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
     opacity: 0;
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
   }
 
   40% {
-    -webkit-transform: perspective(400px) rotateY(-20deg);
-    transform: perspective(400px) rotateY(-20deg);
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
+    -webkit-transform: perspective(400px) rotateY(-20deg);
+    transform: perspective(400px) rotateY(-20deg);
   }
 
   60% {
+    opacity: 1;
     -webkit-transform: perspective(400px) rotateY(10deg);
     transform: perspective(400px) rotateY(10deg);
-    opacity: 1;
   }
 
   80% {
@@ -61,9 +61,9 @@ $secondary-dark: #C51675;
   }
 
   to {
+    opacity: 1;
     -webkit-transform: perspective(400px);
     transform: perspective(400px);
-    opacity: 1;
   }
 }
 
@@ -139,26 +139,26 @@ $secondary-dark: #C51675;
     transform: scale(0.95);
   }
   100% {
-    transform: scale(1);
     opacity: 1;
+    transform: scale(1);
   }
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 
 body {
   color: #fff;
   font-family: 'Raleway';
-  text-align: center;
-  margin: 0px;
   font-size: 8pt;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0px;
   overflow-x: hidden;
+  text-align: center;
 }
 
 #preload {
@@ -174,22 +174,22 @@ body {
 }
 
 .canvas {
+  background: url('../img/filler.png') center center/cover;
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100vw;
-  height: 100%;
-  background: url('../img/filler.png') center center/cover;
 }
 
 .button {
-  padding: 10px 20px;
   border: 2px solid #fff;
   box-sizing: inherit;
+  cursor: pointer;
   display: inline-block;
   font-size: 13pt;
+  padding: 10px 20px;
   transition: all .5s;
-  cursor: pointer;
   &:hover {
     background-color: $primary;
     border-color: $primary;
@@ -205,10 +205,10 @@ body {
 }
 
 .flex {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 
   &.row {
     flex-direction: row;
@@ -220,40 +220,40 @@ body {
 }
 
 .hex-wrap {
-  text-align: center;
-  position: relative;
   display: inline-block;
-  width: 80px;
   height: 80px;
+  position: relative;
+  text-align: center;
+  width: 80px;
 }
 
 .hexagon {
   background-color: $primary;
+  display: inline-block;
   height: 100%;
   width: calc(100% * 0.57735);
-  display: inline-block;
 }
 
 .hexagon:before {
-  position: absolute;
-  top: 0;
-  right: calc((100% / 2) - ((100% * 0.57735) / 2));
   background-color: inherit;
-  height: inherit;
-  width: inherit;
   content: '';
+  height: inherit;
+  position: absolute;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  top: 0;
   transform: rotateZ(60deg);
+  width: inherit;
 }
 
 .hexagon:after {
-  position: absolute;
-  top: 0;
-  right: calc((100% / 2) - ((100% * 0.57735) / 2));
   background-color: inherit;
-  height: inherit;
-  width: inherit;
   content: '';
+  height: inherit;
+  position: absolute;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  top: 0;
   transform: rotateZ(-60deg);
+  width: inherit;
 }
 
 .highlight {
@@ -261,18 +261,18 @@ body {
 }
 
 .header {
-  font-size: 25pt;
-  font-family: 'raleway-bold';
-  position: relative;
   color: #444649;
+  font-family: 'raleway-bold';
+  font-size: 25pt;
+  position: relative;
   position: relative;
 }
 
 .header-bar {
+  background: #444649;
+  height: 4px;
   margin: 25px 0 75px 0;
   width: 70px;
-  height: 4px;
-  background: #444649;
 }
 
 .label {
@@ -288,11 +288,11 @@ body {
 // NAV
 nav {
   @include pos($left: 0, $bottom: 0);
-  height: 50px;
-  width: 100%;
   background: $primary-darkest;
   border-bottom: 3px solid $primary;
+  height: 50px;
   text-align: left;
+  width: 100%;
   z-index: 99;
 
   &.fixed {
@@ -303,14 +303,14 @@ nav {
   }
 
   .link-wrap {
+    background: #333;
+    height: 0;
     max-width: 1200px;
-    width: 100%;
+    overflow: hidden;
     position: absolute;
     top: 53px;
-    background: #333;
-    overflow: hidden;
-    height: 0;
     transition: height .3s ease-out;
+    width: 100%;
 
     &.visible {
       height: 220px;
@@ -320,11 +320,11 @@ nav {
       &:first-child {
         padding: 25px 20px 12px 20px;
       }
-      padding: 12px 20px;
-      font-size: 12pt;
       cursor: pointer;
-      transition: color .5s;
+      font-size: 12pt;
+      padding: 12px 20px;
       text-transform: uppercase;
+      transition: color .5s;
       &:hover {
         color: $secondary;
       }
@@ -332,11 +332,11 @@ nav {
   }
 
   .mdi-menu {
-    position: absolute;
-    right: 5vw;
-    margin: auto 0;
     font-size: 30pt;
     line-height: 36pt;
+    margin: auto 0;
+    position: absolute;
+    right: 5vw;
     top: 0;
   }
 
@@ -346,43 +346,43 @@ nav {
 }
 
 .carousel-wrap {
-  position: relative;
   height: 250px;
   margin: 0 auto;
+  position: relative;
 }
 
 .window {
+  background: #222;
   overflow: hidden;
   position: relative;
-  background: #222;
 }
 
 #carousel {
-  width: 10000px;
   position: relative;
   top: 0;
+  width: 10000px;
 }
 
 .slide {
-  height: 250px;
   cursor: pointer;
-  float: left;
   display: flex;
   flex-direction: column;
+  float: left;
+  height: 250px;
   justify-content: center;
 }
 
 
 .mdi-chevron-left, .mdi-chevron-right {
-  cursor: pointer;
-  position: absolute;
-  bottom: 0;
   background: rgba(0, 0, 0, 0.3);
-  padding: 10px 15px;
+  bottom: 0;
+  color: #fff;
+  cursor: pointer;
   cursor: pointer;
   font-size: 14pt !important;
   font-weight: bold;
-  color: #fff;
+  padding: 10px 15px;
+  position: absolute;
 }
 
 .mdi-chevron-left { left: 0 }
@@ -394,66 +394,66 @@ nav {
 
 // MODAL
 .modal-wrap {
-  height: 100vh; width: 100vw;
-  position: fixed;
+  height: 100vh;
   pointer-events: none;
+  position: fixed; width: 100vw;
   z-index: 100;
 
   .mask {
-    height: 100%; width: 100%;
+    background: rgba(0,0,0,0.5);
+    height: 100%;
+    left: 0;
+    opacity: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.5);
-    opacity: 0;
-    transition: opacity .3s;
+    transition: opacity .3s; width: 100%;
   }
 
   .modal {
+    align-items: flex-start;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    position: relative;
-    transition: all .3s;
-    transform: scale(0.8);
-    opacity: 0;
-    align-items: flex-start;
-    text-align: left;
     box-sizing: border-box;
     color: #333;
     height: 100vh;
+    opacity: 0;
+    position: relative;
+    text-align: left;
+    transform: scale(0.8);
+    transition: all .3s;
   }
 
   .close {
     bottom: 25px;
-    right: 10px;
     color: #bbb;
-    font-size: 20pt;
-    position: absolute;
-    font-weight: 800;
     cursor: pointer;
+    font-size: 20pt;
+    font-weight: 800;
+    position: absolute;
+    right: 10px;
   }
 
   .info-box {
     border-top: 3px solid $primary-darkest;
-    padding: 15px 10px 85px 10px;
     box-sizing: border-box;
     color: #444;
+    padding: 15px 10px 85px 10px;
   }
 
   .title {
+    font-family: 'Raleway-bold';
     font-size: 16pt;
     line-height: 20pt;
-    font-family: 'Raleway-bold';
   }
 
   .tag {
-    display: block;
-    font-weight: 300;
-    color: #c0c0c0;
-    font-family: 'Raleway-bold';
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding-bottom: 15px;
+    color: #c0c0c0;
+    display: block;
+    font-family: 'Raleway-bold';
     font-size: 8pt;
+    font-weight: 300;
+    padding-bottom: 15px;
   }
 
   .detail {
@@ -463,25 +463,25 @@ nav {
   }
 
   .mdi-open-in-new {
-    position: relative;
-    left: -10px;
     font-size: 11pt;
+    left: -10px;
+    position: relative;
   }
 
   .button {
-    padding: 11px 30px;
-    font-size: 10pt;
-    transition: all .5s;
-    cursor: pointer;
     background: $secondary;
-    color: #fff;
-    font-weight: 600;
     border: 0;
-    pointer-events: none;
-    visibility: hidden;
-    position: absolute;
     bottom: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 10pt;
+    font-weight: 600;
     left: 10px;
+    padding: 11px 30px;
+    pointer-events: none;
+    position: absolute;
+    transition: all .5s;
+    visibility: hidden;
 
     &.visible {
       pointer-events: initial;
@@ -489,8 +489,8 @@ nav {
     }
 
     &:hover {
-      color: $secondary;
       background: #fff;
+      color: $secondary;
     }
   }
 
@@ -501,8 +501,8 @@ nav {
   &.visible {
     pointer-events: initial;
     .modal {
-      transform: scale(1);
       opacity: 1;
+      transform: scale(1);
     }
     .mask {
       opacity: 1;
@@ -511,35 +511,35 @@ nav {
 }
 
 section {
-  padding: 70px 0 70px 0;
   color: #616161;
   line-height: 11pt;
+  padding: 70px 0 70px 0;
   position: relative;
 
   .container {
-    max-width: 1200px;
+    box-sizing: border-box;
     margin: 0 auto;
+    max-width: 1200px;
     padding: 0 10px;
     width: 100%;
-    box-sizing: border-box;
   }
 
   //HOME
   &:nth-of-type(1) {
-    padding: 0 10px;
     color: #fff;
     height: calc(100vh + 53px);
+    padding: 0 10px;
 
     .highlight {
       font-family: 'Raleway-semibold';
     }
 
     .text {
-      margin: 0 0 20px 0;
       font-size: 16pt;
       line-height: 20pt;
-      z-index: 1;
+      margin: 0 0 20px 0;
       pointer-events: none;
+      z-index: 1;
     }
 
     .hexagon {
@@ -550,15 +550,15 @@ section {
     }
 
     .button {
+      margin-bottom: 53px;
       padding: 12px 40px 12px 15px;
       position: relative;
-      margin-bottom: 53px;
 
       .mdi {
-        transition: transform .3s;
         position: absolute;
         right: 15px;
         top: 11px;
+        transition: transform .3s;
       }
 
       &:hover {
@@ -581,9 +581,9 @@ section {
     }
 
     .bullet-wrap {
+      height: 200px;
       justify-content: flex-start;
       padding: 0 7px;
-      height: 200px;
     }
 
     .highlight {
@@ -591,8 +591,8 @@ section {
     }
 
     .up-arrow {
-      margin: 15px 0;
       height: 30px;
+      margin: 15px 0;
     }
 
     .skills-wrapper {
@@ -609,19 +609,19 @@ section {
     }
 
     .hexagon i {
-      position: absolute;
-      top: 20px;
-      font-size: 34pt;
       color: #fff;
+      font-size: 34pt;
       left: 0;
+      position: absolute;
       right: 0;
+      top: 20px;
       z-index: 1;
     }
 
     .bars-wrap {
       margin: 50px auto 0 auto;
-      width: calc(100% - 15px);
       max-width: 90%;
+      width: calc(100% - 15px);
 
       &:not(.animated) {
         .fill {
@@ -631,13 +631,13 @@ section {
     }
 
     .bar {
-      color: #666;
-      height: 22px;
-      position: relative;
-      background-color: #eee;
-      margin: 0 0 12px 0;
       align-items: flex-end;
+      background-color: #eee;
+      color: #666;
       font-size: 7pt;
+      height: 22px;
+      margin: 0 0 12px 0;
+      position: relative;
 
       @for $i from 1 through 10 {
         &:nth-child(#{$i}) .fill {
@@ -652,8 +652,8 @@ section {
       &.fill {
         @include pos($top: 0, $left: 0);
         background-color: $primary-dark;
-        padding: 0;
         opacity: 1;
+        padding: 0;
       }
 
       .tag {
@@ -673,8 +673,8 @@ section {
       }
 
       span {
-        z-index: 1;
         padding: 0 15px 0 0;
+        z-index: 1;
       }
     }
   }
@@ -692,21 +692,21 @@ section {
     }
 
     .filter {
+      cursor: pointer;
       font-size: 6pt;
       font-weight: 600;
       padding: 0 20px;
-      cursor: pointer;
       transition: background-color .5s;
     }
 
     .float-bar {
       @include pos($top: 0, $left: 30px, $bottom: 0);
-      margin: auto 0;
-      position: absolute;
-      overflow: hidden;
-      height: 25px;
-      border-radius: 1px;
       background: $secondary;
+      border-radius: 1px;
+      height: 25px;
+      margin: auto 0;
+      overflow: hidden;
+      position: absolute;
       transition: all .5s ease-in-out;
 
 
@@ -729,11 +729,11 @@ section {
       margin: 20px 0;
 
       .text, .button {
-        z-index: 2;
-        text-align: center;
-        opacity: 0;
-        transition: all 0.3s ease-in-out;
         color: $primary-darkest;
+        opacity: 0;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        z-index: 2;
 
         .bold {
           font-size: 16pt;
@@ -743,10 +743,10 @@ section {
       .button {
         @include pos($bottom: 0, $left: 0, $right: 0);
         border: 2px solid $secondary;
-        width: 170px;
-        margin: 0 auto;
         font-size: 13pt;
+        margin: 0 auto;
         padding: 7px 0;
+        width: 170px;
       }
 
       .mix {
@@ -773,11 +773,11 @@ section {
         }
 
         .card {
+          cursor: pointer;
           height: 240px;
           max-width: 100%;
-          width: calc(50vw - 8px);
-          cursor: pointer;
           transition: opacity .5s;
+          width: calc(50vw - 8px);
 
         }
 
@@ -790,8 +790,8 @@ section {
           }
 
           .button {
-            opacity: 1;
             bottom: 24%;
+            opacity: 1;
           }
         }
 
@@ -815,18 +815,18 @@ section {
     }
 
     .gradient {
+      height: 100%;
+      left: 0;
       position: absolute;
       top: 0;
-      left: 0;
-      height: 100%;
       width: 100%;
     }
 
     .blog-wrap {
+      cursor: pointer;
       margin: 0 0 50px 0;
       padding: 0 2px;
       width: 100%;
-      cursor: pointer;
 
       @for $i from 1 through 4 {
         #thumb-#{$i} {
@@ -850,8 +850,8 @@ section {
     }
 
     .label {
-      line-height: 14pt;
       font-size: 12pt;
+      line-height: 14pt;
       transition: color .3s ease-in-out;
     }
 
@@ -861,16 +861,16 @@ section {
     }
 
     .date {
-      font-size: 7pt;
       font-family: 'Open sans';
+      font-size: 7pt;
       margin: 5px 0 0 0;
     }
 
     .bar {
-      height: 3px;
-      width: 25%;
       background: $primary;
+      height: 3px;
       margin: 10px 0px;
+      width: 25%;
     }
 
     .text {
@@ -890,19 +890,19 @@ section {
       color: #fff;
     }
     .header-bar {
-      margin: 25px 0 40px 0;
       background: #fff;
+      margin: 25px 0 40px 0;
       width: 110px;
     }
     .highlight {
-      font-weight: 600;
       color: $primary;
+      font-weight: 600;
     }
 
     svg {
+      left: 0;
       position: absolute;
       top: 0;
-      left: 0;
     }
 
     form {
@@ -911,31 +911,31 @@ section {
     }
 
     input[type="text"], input[type="email"], textarea {
-      display: block;
-      width: 100%;
-      box-sizing: border-box;
-      outline: none;
-      border: 0;
-      padding: 10px 15px;
       background: #1E242C;
+      border: 0;
+      box-sizing: border-box;
+      color: #fff;
+      display: block;
       font-size: 12pt;
       margin-bottom: 3px;
-      color: #fff;
+      outline: none;
+      padding: 10px 15px;
+      width: 100%;
     }
 
     textarea {
-      min-height: 150px;
       margin-bottom: 5px;
+      min-height: 150px;
     }
 
     .button {
-      float: right;
-      margin: 5px 0 0 0;
-      font-size: 12pt;
-      padding: 10px 30px;
-      color: #fff;
       background: transparent;
+      color: #fff;
+      float: right;
+      font-size: 12pt;
+      margin: 5px 0 0 0;
       outline: 0;
+      padding: 10px 30px;
 
       &:hover {
         background: $primary;
@@ -944,10 +944,10 @@ section {
 
     #success {
       height: 0;
-      width: 100%;
       overflow: hidden;
       position: relative;
       transition: height .25s;
+      width: 100%;
 
       &.expand {
         height: 36px;
@@ -955,21 +955,21 @@ section {
 
       div {
         background: #04c986;
+        border: 1px solid #157c59;
         color: #157051;
         font-size: 10pt;
         font-weight: 600;
         padding: 5px 0;
-        border: 1px solid #157c59;
       }
     }
 
     #close {
-      position: absolute;
-      padding: 5px 15px;
+      cursor: pointer;
       font-size: 12pt;
       font-weight: 600;
+      padding: 5px 15px;
+      position: absolute;
       right: 0;
-      cursor: pointer;
     }
   }
 }
@@ -980,18 +980,18 @@ footer {
   position: relative;
 
   .mdi-chevron-double-up {
-    position: absolute;
-    top: -25px;
     background: $secondary;
-    font-size: 30pt;
-    width: 47px;
-    height: 50px;
-    line-height: 40pt;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
     cursor: pointer;
+    font-size: 30pt;
+    height: 50px;
+    left: 0;
+    line-height: 40pt;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: -25px;
     transition: background .5s;
+    width: 47px;
     &:hover {
       background: $secondary-light;
     }
@@ -999,22 +999,22 @@ footer {
 
   .icon-wrap {
     .icon {
-      overflow: hidden;
-      transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+      background: #262F38;
       cursor: pointer;
-      width: 55px;
+      font-size: 18pt;
       height: 55px;
+      margin: 0 15px;
+      overflow: hidden;
       position: relative;
       text-align: center;
-      margin: 0 15px;
-      background: #262F38;
-      font-size: 18pt;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+      width: 55px;
 
     }
 
     .mdi {
-      text-align: center;
       color: #fff;
+      text-align: center;
 
       &.mdi-codepen {
         font-size: 20pt;
@@ -1039,14 +1039,14 @@ footer {
   }
 
   .footnote {
-    font-size: 10pt;
     color: #8F9AA7;
+    font-size: 10pt;
     margin-top: 35px;
     opacity: 0.6;
 
     .highlight {
-      font-family: 'Open Sans';
       color: $secondary;
+      font-family: 'Open Sans';
     }
   }
 }
@@ -1096,8 +1096,8 @@ footer {
 
   .modal-wrap {
     .modal {
-      top: -6vh;
       height: initial;
+      top: -6vh;
     }
     .info-box {
       padding: 35px 60px 90px 25px;
@@ -1129,10 +1129,10 @@ footer {
 
   nav {
     .link-wrap {
-      position: initial;
       background: none;
-      overflow: visible;
       height: initial;
+      overflow: visible;
+      position: initial;
       text-align: left;
 
       .visible {
@@ -1143,10 +1143,10 @@ footer {
         &:first-child {
           padding: 0;
         }
+        display: inline;
+        font-size: initial;
         margin: 0 20px;
         padding: initial;
-        font-size: initial;
-        display: inline;
       }
     }
 
@@ -1207,9 +1207,9 @@ footer {
 
 
       .bar {
+        font-size: 11pt;
         height: 28px;
         margin: 0 0 15px 0;
-        font-size: 11pt;
 
         span {
           display: initial;
@@ -1252,8 +1252,8 @@ footer {
     &:nth-of-type(4) {
       padding: 130px 0 180px 0;
       .label {
-        line-height: 22pt;
         font-size: 16pt;
+        line-height: 22pt;
       }
 
       .date {
@@ -1298,8 +1298,8 @@ footer {
     .mix {
       @for $i from 1 through 6 {
         &:nth-child(#{$i}) > div {
-          opacity: 0;
           animation: slideUp .75s #{$i * 0.1}s ease both;
+          opacity: 0;
         }
       }
     }
@@ -1342,12 +1342,12 @@ footer {
   }
 
   .flex-50-gt-sm {
+    box-sizing: border-box;
     -webkit-flex: 1 1 50%;
     -ms-flex: 1 1 50%;
     flex: 1 1 50%;
-    max-width: 50%;
     max-height: 100%;
-    box-sizing: border-box;
+    max-width: 50%;
   }
 
 
@@ -1372,9 +1372,9 @@ footer {
       }
 
       .bullet-wrap {
+        height: intial;
         margin: 0;
         padding: 0 10px;
-        height: intial;
       }
     }
 
@@ -1384,16 +1384,16 @@ footer {
       }
       .filter {
         font-size: 13pt;
-        padding: 0 40px;
         margin: 0 25px;
+        padding: 0 40px;
       }
     }
 
     &:nth-of-type(4) {
       .blog-wrap {
-        width: 400px;
         margin: 0 0 50px 20px;
         opacity: 0;
+        width: 400px;
       }
     }
   }
@@ -1403,8 +1403,8 @@ footer {
   section {
     &:nth-of-type(4) {
       .blog-wrap {
-        width: 270px;
         margin: 0 0 50px 20px;
+        width: 270px;
       }
     }
   }
