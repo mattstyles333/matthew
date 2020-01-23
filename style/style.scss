@@ -1,12 +1,18 @@
-$primary: #04C2C9;
-$primary-dark: #00A1A7;
+$primary: #04c2c9;
+$primary-dark: #00a1a7;
 $primary-darker: #036367;
-$primary-darkest: #1B242F;
-$secondary: #E31B6D;
+$primary-darkest: #1b242f;
+$secondary: #e31b6d;
 $secondary-light: #fb1f79;
-$secondary-dark: #C51675;
+$secondary-dark: #c51675;
 
-@mixin pos($pos: absolute, $top: null, $left: null, $bottom: null, $right: null) {
+@mixin pos(
+  $pos: absolute,
+  $top: null,
+  $left: null,
+  $bottom: null,
+  $right: null
+) {
   bottom: $bottom;
   left: $left;
   position: $pos;
@@ -30,7 +36,9 @@ $secondary-dark: #C51675;
 }
 
 @keyframes fadeIn {
-  100% { opacity: 1 };
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes flipInX {
@@ -68,12 +76,14 @@ $secondary-dark: #C51675;
 }
 
 @keyframes popDown {
-  0% { transform: translateY(-100px) }
+  0% {
+    transform: translateY(-100px);
+  }
 }
 
 @keyframes slideUp {
   0% {
-    transform: translateY(300px)
+    transform: translateY(300px);
   }
   100% {
     opacity: 1;
@@ -83,7 +93,7 @@ $secondary-dark: #C51675;
 
 @keyframes slideDown {
   0% {
-    transform: translateY(-300px)
+    transform: translateY(-300px);
   }
   100% {
     opacity: 1;
@@ -91,26 +101,25 @@ $secondary-dark: #C51675;
   }
 }
 
-
 @keyframes slideInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-300px)
+    transform: translateX(-300px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0)
+    transform: translateX(0);
   }
 }
 
 @keyframes slideInRight {
   0% {
     opacity: 0;
-    transform: translateX(300px)
+    transform: translateX(300px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0)
+    transform: translateX(0);
   }
 }
 
@@ -148,7 +157,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
 
 body {
   color: #fff;
@@ -189,7 +197,7 @@ body {
   display: inline-block;
   font-size: 13pt;
   padding: 10px 20px;
-  transition: all .5s;
+  transition: all 0.5s;
   &:hover {
     background-color: $primary;
     border-color: $primary;
@@ -298,7 +306,7 @@ nav {
   &.fixed {
     @include pos($pos: fixed, $top: 0, $bottom: inherit, $left: 0);
     &.desk {
-      animation: popDown .5s;
+      animation: popDown 0.5s;
     }
   }
 
@@ -309,7 +317,7 @@ nav {
     overflow: hidden;
     position: absolute;
     top: 53px;
-    transition: height .3s ease-out;
+    transition: height 0.3s ease-out;
     width: 100%;
 
     &.visible {
@@ -324,7 +332,7 @@ nav {
       font-size: 12pt;
       padding: 12px 20px;
       text-transform: uppercase;
-      transition: color .5s;
+      transition: color 0.5s;
       &:hover {
         color: $secondary;
       }
@@ -372,8 +380,8 @@ nav {
   justify-content: center;
 }
 
-
-.mdi-chevron-left, .mdi-chevron-right {
+.mdi-chevron-left,
+.mdi-chevron-right {
   background: rgba(0, 0, 0, 0.3);
   bottom: 0;
   color: #fff;
@@ -385,28 +393,34 @@ nav {
   position: absolute;
 }
 
-.mdi-chevron-left { left: 0 }
-.mdi-chevron-right { right: 0 }
+.mdi-chevron-left {
+  left: 0;
+}
+.mdi-chevron-right {
+  right: 0;
+}
 
 .transition {
-  transition: .7s;
+  transition: 0.7s;
 }
 
 // MODAL
 .modal-wrap {
   height: 100vh;
   pointer-events: none;
-  position: fixed; width: 100vw;
+  position: fixed;
+  width: 100vw;
   z-index: 100;
 
   .mask {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     height: 100%;
     left: 0;
     opacity: 0;
     position: absolute;
     top: 0;
-    transition: opacity .3s; width: 100%;
+    transition: opacity 0.3s;
+    width: 100%;
   }
 
   .modal {
@@ -420,7 +434,7 @@ nav {
     position: relative;
     text-align: left;
     transform: scale(0.8);
-    transition: all .3s;
+    transition: all 0.3s;
   }
 
   .close {
@@ -447,7 +461,7 @@ nav {
   }
 
   .tag {
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     color: #c0c0c0;
     display: block;
     font-family: 'Raleway-bold';
@@ -480,7 +494,7 @@ nav {
     padding: 11px 30px;
     pointer-events: none;
     position: absolute;
-    transition: all .5s;
+    transition: all 0.5s;
     visibility: hidden;
 
     &.visible {
@@ -495,7 +509,7 @@ nav {
   }
 
   .carousel {
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25);
   }
 
   &.visible {
@@ -543,7 +557,7 @@ section {
     }
 
     .hexagon {
-      transition: transform .9s ease-in-out;
+      transition: transform 0.9s ease-in-out;
       &:hover {
         transform: rotate(540deg);
       }
@@ -558,23 +572,20 @@ section {
         position: absolute;
         right: 15px;
         top: 11px;
-        transition: transform .3s;
+        transition: transform 0.3s;
       }
 
       &:hover {
         .mdi {
-          transform: rotate(90deg)
+          transform: rotate(90deg);
         }
       }
-
     }
   }
 
   //ABOUT
   &:nth-of-type(2) {
-
     .label-wrap {
-
       .label {
         margin: 20px 0 10px 0;
       }
@@ -587,7 +598,7 @@ section {
     }
 
     .highlight {
-      color: #009ADA;
+      color: #009ada;
     }
 
     .up-arrow {
@@ -641,7 +652,7 @@ section {
 
       @for $i from 1 through 10 {
         &:nth-child(#{$i}) .fill {
-          transition: #{1 + ($i * .1)}s .2s width ease-in-out;
+          transition: #{1 + ($i * 0.1)}s 0.2s width ease-in-out;
         }
       }
 
@@ -696,7 +707,7 @@ section {
       font-size: 6pt;
       font-weight: 600;
       padding: 0 20px;
-      transition: background-color .5s;
+      transition: background-color 0.5s;
     }
 
     .float-bar {
@@ -707,13 +718,12 @@ section {
       margin: auto 0;
       overflow: hidden;
       position: absolute;
-      transition: all .5s ease-in-out;
-
+      transition: all 0.5s ease-in-out;
 
       .row {
         @include pos($top: 0, $left: -30px, $bottom: 0);
         margin: auto 0;
-        transition: left .5s ease-in-out;
+        transition: left 0.5s ease-in-out;
         .filter {
           color: #fff;
         }
@@ -728,7 +738,8 @@ section {
     #gallery {
       margin: 20px 0;
 
-      .text, .button {
+      .text,
+      .button {
         color: $primary-darkest;
         opacity: 0;
         text-align: center;
@@ -773,18 +784,19 @@ section {
         }
 
         .card {
-          cursor: pointer;
           height: 240px;
           max-width: 100%;
-          transition: opacity .5s;
+          transition: opacity 0.5s;
           width: calc(50vw - 8px);
-
         }
 
         &:hover {
-          .card { opacity: 0 }
+          .card {
+            opacity: 0;
+          }
 
           .text {
+            cursor: default;
             opacity: 1;
             top: 24%;
           }
@@ -794,23 +806,21 @@ section {
             opacity: 1;
           }
         }
-
-
       }
-
-
     }
   }
 
-  .flex-50-gt-sm { display: block;}
-
+  .flex-50-gt-sm {
+    display: block;
+  }
 
   //BLOG
   &:nth-of-type(4) {
     padding: 130px 0 100px 0;
     text-align: left;
 
-    .flex.row-gt-sm, .flex.wrap {
+    .flex.row-gt-sm,
+    .flex.wrap {
       align-items: flex-start;
     }
 
@@ -835,7 +845,7 @@ section {
       }
 
       .fade-wrap {
-        transition: opacity .3s;
+        transition: opacity 0.3s;
       }
 
       &.fade .fade-wrap {
@@ -852,7 +862,7 @@ section {
     .label {
       font-size: 12pt;
       line-height: 14pt;
-      transition: color .3s ease-in-out;
+      transition: color 0.3s ease-in-out;
     }
 
     .thumb {
@@ -910,8 +920,10 @@ section {
       min-width: 95%;
     }
 
-    input[type="text"], input[type="email"], textarea {
-      background: #1E242C;
+    input[type='text'],
+    input[type='email'],
+    textarea {
+      background: #1e242c;
       border: 0;
       box-sizing: border-box;
       color: #fff;
@@ -946,7 +958,7 @@ section {
       height: 0;
       overflow: hidden;
       position: relative;
-      transition: height .25s;
+      transition: height 0.25s;
       width: 100%;
 
       &.expand {
@@ -990,7 +1002,7 @@ footer {
     position: absolute;
     right: 0;
     top: -25px;
-    transition: background .5s;
+    transition: background 0.5s;
     width: 47px;
     &:hover {
       background: $secondary-light;
@@ -999,7 +1011,7 @@ footer {
 
   .icon-wrap {
     .icon {
-      background: #262F38;
+      background: #262f38;
       cursor: pointer;
       font-size: 18pt;
       height: 55px;
@@ -1009,7 +1021,6 @@ footer {
       text-align: center;
       transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
       width: 55px;
-
     }
 
     .mdi {
@@ -1023,7 +1034,7 @@ footer {
 
     .icon:hover {
       background: $primary;
-      box-shadow: 0 0 0 3px rgba(4,94,201,0.1);
+      box-shadow: 0 0 0 3px rgba(4, 94, 201, 0.1);
       transform: scale(0.9);
 
       .mdi {
@@ -1039,7 +1050,7 @@ footer {
   }
 
   .footnote {
-    color: #8F9AA7;
+    color: #8f9aa7;
     font-size: 10pt;
     margin-top: 35px;
     opacity: 0.6;
@@ -1061,7 +1072,6 @@ footer {
 }
 
 @media screen and (min-width: 600px) {
-
   body {
     font-size: 12pt;
   }
@@ -1083,14 +1093,17 @@ footer {
   }
 
   .hex-wrap {
-    height: 100px; width: 100px
+    height: 100px;
+    width: 100px;
   }
 
-  .slide, .carousel-wrap {
+  .slide,
+  .carousel-wrap {
     height: 450px;
   }
 
-  .mdi-chevron-left, .mdi-chevron-right {
+  .mdi-chevron-left,
+  .mdi-chevron-right {
     font-size: 25pt !important;
   }
 
@@ -1195,7 +1208,6 @@ footer {
       }
 
       .skills-wrapper {
-
         > .flex:first-child {
           padding: 0 50px 0 50px;
         }
@@ -1204,7 +1216,6 @@ footer {
           height: 250px;
         }
       }
-
 
       .bar {
         font-size: 11pt;
@@ -1220,7 +1231,6 @@ footer {
         }
       }
 
-
       .hexagon i {
         font-size: 40pt;
       }
@@ -1228,7 +1238,6 @@ footer {
 
     // PORTFOLIO
     &:nth-of-type(3) {
-
       .filter {
         font-size: 11pt;
         margin: 0 15px;
@@ -1247,7 +1256,6 @@ footer {
         }
       }
     }
-
 
     &:nth-of-type(4) {
       padding: 130px 0 180px 0;
@@ -1270,7 +1278,7 @@ footer {
       }
 
       .blog-wrap {
-        width: 400px
+        width: 400px;
       }
 
       .thumb {
@@ -1284,11 +1292,9 @@ footer {
       }
     }
   }
-
 }
 
 @media screen and (min-width: 960px) {
-
   .waypoint {
     opacity: 0;
   }
@@ -1296,9 +1302,9 @@ footer {
   .animated.waypoint#gallery {
     opacity: 1;
     .mix {
-      @for $i from 1 through 6 {
+      @for $i from 1 through 9 {
         &:nth-child(#{$i}) > div {
-          animation: slideUp .75s #{$i * 0.1}s ease both;
+          animation: slideUp 0.75s #{$i * 0.1}s ease both;
           opacity: 0;
         }
       }
@@ -1307,22 +1313,22 @@ footer {
 
   .animated {
     &.slide-up {
-      animation: slideUp .75s ease both;
+      animation: slideUp 0.75s ease both;
     }
     &.slide-down {
-      animation: slideDown .75s ease both;
+      animation: slideDown 0.75s ease both;
     }
     &.slide-in-left {
-      animation: slideInLeft .75s ease both;
+      animation: slideInLeft 0.75s ease both;
     }
     &.slide-in-right {
-      animation: slideInRight .75s ease both;
+      animation: slideInRight 0.75s ease both;
     }
     &.flip-in-x {
-      animation: flipInX .75s ease both;
+      animation: flipInX 0.75s ease both;
     }
     &.fade-in {
-      animation: fadeIn .75s ease both;
+      animation: fadeIn 0.75s ease both;
     }
     &.pop-in {
       animation: popIn 1s both;
@@ -1349,8 +1355,6 @@ footer {
     max-height: 100%;
     max-width: 50%;
   }
-
-
 
   section {
     // ABOUT
@@ -1408,5 +1412,4 @@ footer {
       }
     }
   }
-
 }
