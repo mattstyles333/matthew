@@ -135,6 +135,10 @@ body {
   display: none;
 }
 
+.page-link {
+  cursor: pointer;
+}
+
 .disable-hover {
   pointer-events: none;
 }
