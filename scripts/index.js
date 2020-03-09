@@ -56,9 +56,6 @@ $(function() {
         if (pos2 > $('#portfolio').offset().top) {
             highlightLink('portfolio');
         }
-        if (pos2 > $('#blog').offset().top) {
-            highlightLink('blog');
-        }
         if (
             pos2 > $('#contact').offset().top ||
             pos + $(window).height() === $(document).height()
