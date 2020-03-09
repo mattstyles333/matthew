@@ -102,18 +102,18 @@ $(function() {
         $('.link-wrap').toggleClass('visible');
     });
 
-    $('.blog-wrap').hover(
-        function() {
-            $('.blog-wrap')
-                .not(this)
-                .addClass('fade');
-            $(this).addClass('hover');
-        },
-        function() {
-            $(this).removeClass('hover');
-            $('.blog-wrap').removeClass('fade');
-        }
-    );
+    // $('.blog-wrap').hover(
+    //     function() {
+    //         $('.blog-wrap')
+    //             .not(this)
+    //             .addClass('fade');
+    //         $(this).addClass('hover');
+    //     },
+    //     function() {
+    //         $(this).removeClass('hover');
+    //         $('.blog-wrap').removeClass('fade');
+    //     }
+    // );
 
     posFilterBar($('.filter').first());
 
