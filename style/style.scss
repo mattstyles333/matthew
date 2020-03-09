@@ -1,8 +1,7 @@
-$primary: #04c2c9;
-$primary-dark: #00a1a7;
-$primary-darker: #036367;
-$primary-darkest: #1b242f;
-$secondary: #e31b6d;
+$primary: #3891A6;
+$primary-dark: rgb(104, 164, 206);
+$primary-darkest: #080705;
+$secondary: #FDE74C;
 $secondary-light: #fb1f79;
 $secondary-dark: #c51675;
 @mixin pos( $pos: absolute, $top: null, $left: null, $bottom: null, $right: null) {
@@ -192,8 +191,8 @@ body {
     padding: 10px 20px;
     transition: all 0.5s;
     &:hover {
-        background-color: $primary;
-        border-color: $primary;
+        background-color: $secondary-dark;
+        border-color: white;
     }
     .mdi {
         vertical-align: middle;
@@ -478,7 +477,7 @@ nav {
         }
         &:hover {
             background: #fff;
-            color: $secondary;
+            color: $primary-dark;
         }
     }
     .carousel {
@@ -704,7 +703,7 @@ section {
                 }
                 .button {
                     &:hover {
-                        background: $secondary;
+                        background: $primary-dark;
                         color: #fff;
                     }
                 }
@@ -857,7 +856,7 @@ section {
             outline: 0;
             padding: 10px 30px;
             &:hover {
-                background: $primary;
+                background: $secondary-dark;
             }
         }
         #success {
@@ -931,7 +930,7 @@ footer {
             }
         }
         .icon:hover {
-            background: $primary;
+            background: $secondary-light;
             box-shadow: 0 0 0 3px rgba(4, 94, 201, 0.1);
             transform: scale(0.9);
             .mdi {
