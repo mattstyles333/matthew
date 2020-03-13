@@ -1,3 +1,6 @@
+About:
+Original webapp was copied from https://github.com/mattwilliams85/mattwilliams85.github.io
+
 TO DO:
 Add image thumbnails for projects
 Add slides too
@@ -18,4 +21,5 @@ Browser Retest
 MAYBE:
 mysterious carousel bug
 DL my resume Link
+
 
