@@ -36,6 +36,12 @@ $(document).ready(function() {
             tag: 'One of the largerst independent online glasses retailers',
             detail: 'A big Magento ecommerce store that specializes in selling glasses at low prices with exceptional customer service.',
             link: 'https://www.spex4less.com'
+        },
+        belarc: {
+            title: 'Belarc',
+            tag: 'Software company that focuses on system management',
+            detail: 'A website that details Belarc\'s offerings and services.',
+            link: 'https://www.belarc.com'
         }
     };
 
