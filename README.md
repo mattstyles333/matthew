@@ -4,7 +4,7 @@ Original webapp was copied from https://github.com/mattwilliams85/mattwilliams85
 TO DO:
 Add image thumbnails for projects
 Add slides too
-
+Fix project filter
 
 OPTIMIZE: 
 Optimize image sizes
