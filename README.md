@@ -6,6 +6,7 @@ Add slides too
 OPTIMIZE: 
 Optimize image sizes
 Higher quality images for portoflio (allows for 100vw on smaller sizes)
+Update Font
 
 CLEAN UP:
 Spell Check
