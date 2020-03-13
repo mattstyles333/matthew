@@ -124,7 +124,7 @@ body {
   padding: 10px 20px;
   transition: all 0.5s; }
   .button:hover {
-    background-color: #c51675;
+    background-color: rgba(255, 255, 255, 0.212);
     border-color: white; }
   .button .mdi {
     vertical-align: middle; }
@@ -176,7 +176,7 @@ body {
   width: inherit; }
 
 .highlight {
-  color: #FDE74C; }
+  color: #a8960b; }
 
 .header {
   color: #444649;
@@ -236,7 +236,7 @@ nav {
       nav .link-wrap div:first-child {
         padding: 25px 20px 12px 20px; }
       nav .link-wrap div:hover {
-        color: #FDE74C; }
+        color: #a8960b; }
   nav .mdi-menu {
     font-size: 30pt;
     line-height: 36pt;
@@ -245,7 +245,7 @@ nav {
     right: 5vw;
     top: 0; }
   nav .active {
-    color: #FDE74C; }
+    color: #a8960b; }
 
 .carousel-wrap {
   height: 250px;
@@ -352,7 +352,7 @@ nav {
     left: -10px;
     position: relative; }
   .modal-wrap .button {
-    background: #FDE74C;
+    background: #a8960b;
     border: 0;
     bottom: 20px;
     color: #fff;
@@ -370,7 +370,8 @@ nav {
       visibility: visible; }
     .modal-wrap .button:hover {
       background: #fff;
-      color: #68a4ce; }
+      color: #a8960b;
+      border: 2px solid #a8960b; }
   .modal-wrap .carousel {
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25); }
   .modal-wrap.visible {
@@ -500,7 +501,7 @@ section {
     section:nth-of-type(2) .bar.secondary {
       background-color: #c51675; }
       section:nth-of-type(2) .bar.secondary .tag {
-        background-color: #FDE74C; }
+        background-color: #a8960b; }
     section:nth-of-type(2) .bar span {
       padding: 0 15px 0 0;
       z-index: 1; }
@@ -522,7 +523,7 @@ section {
       left: 30px;
       position: absolute;
       top: 0;
-      background: #FDE74C;
+      background: #a8960b;
       border-radius: 1px;
       height: 25px;
       margin: auto 0;
@@ -560,7 +561,7 @@ section {
         left: 0;
         position: absolute;
         right: 0;
-        border: 2px solid #FDE74C;
+        border: 2px solid #a8960b;
         font-size: 13pt;
         margin: 0 auto;
         padding: 7px 0;
@@ -571,7 +572,7 @@ section {
         section:nth-of-type(3) #gallery .mix .waypoint {
           background: #fff; }
         section:nth-of-type(3) #gallery .mix .button:hover {
-          background: #68a4ce;
+          background: #a8960b;
           color: #fff; }
         section:nth-of-type(3) #gallery .mix:nth-child(1) .card {
           background: url("../img/thumb-1.jpg") center center/cover; }
@@ -658,7 +659,7 @@ section {
       outline: 0;
       padding: 10px 30px; }
       section:nth-of-type(4) .button:hover {
-        background: #c51675; }
+        background: rgba(255, 255, 255, 0.212); }
     section:nth-of-type(4) #success {
       height: 0;
       overflow: hidden;
@@ -687,7 +688,7 @@ footer {
   padding: 70px 0 50px 0;
   position: relative; }
   footer .mdi-chevron-double-up {
-    background: #FDE74C;
+    background: #a8960b;
     cursor: pointer;
     font-size: 30pt;
     height: 50px;
@@ -733,7 +734,7 @@ footer {
     margin-top: 35px;
     opacity: 0.6; }
     footer .footnote .highlight {
-      color: #FDE74C;
+      color: #a8960b;
       font-family: 'Open Sans'; }
 
 @media screen and (max-width: 400px) {

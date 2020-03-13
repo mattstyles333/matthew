@@ -1,7 +1,7 @@
 $primary: #3891A6;
 $primary-dark: rgb(104, 164, 206);
 $primary-darkest: #080705;
-$secondary: #FDE74C;
+$secondary: rgb(168, 150, 11);
 $secondary-light: #fb1f79;
 $secondary-dark: #c51675;
 @mixin pos( $pos: absolute, $top: null, $left: null, $bottom: null, $right: null) {
@@ -191,7 +191,7 @@ body {
     padding: 10px 20px;
     transition: all 0.5s;
     &:hover {
-        background-color: $secondary-dark;
+        background-color: rgba(255, 255, 255, 0.212);
         border-color: white;
     }
     .mdi {
@@ -477,7 +477,8 @@ nav {
         }
         &:hover {
             background: #fff;
-            color: $primary-dark;
+            color: $secondary;
+            border: 2px solid $secondary;
         }
     }
     .carousel {
@@ -703,7 +704,7 @@ section {
                 }
                 .button {
                     &:hover {
-                        background: $primary-dark;
+                        background: $secondary;
                         color: #fff;
                     }
                 }
@@ -856,7 +857,7 @@ section {
             outline: 0;
             padding: 10px 30px;
             &:hover {
-                background: $secondary-dark;
+                background: rgba(255, 255, 255, 0.212);
             }
         }
         #success {
