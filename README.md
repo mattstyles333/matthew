@@ -5,6 +5,8 @@ TO DO:
 Add image thumbnails for projects
 Add slides too
 Fix project filter
+alt tags for images
+h1 tag
 
 OPTIMIZE: 
 Optimize image sizes
