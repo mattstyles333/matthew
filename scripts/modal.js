@@ -42,6 +42,18 @@ $(document).ready(function() {
             tag: 'Software company that focuses on system management',
             detail: 'A website that details Belarc\'s offerings and services.',
             link: 'https://www.belarc.com'
+        },
+        gsf: {
+            title: 'Great Sailfishing',
+            tag: 'A deepwater billfishing charter company in Guatemala',
+            detail: 'A billfish charter company operating out of Guatemala, that specializes in all inclusive group fishing trips.',
+            link: 'https://www.greatsailfishing.com'
+        },
+        gbf: {
+            title: 'Great Bonefishing',
+            tag: 'A Bonefishing charter company in the Turks and Caicos',
+            detail: 'A bonefishing charter company operating out of North Caicos, in the Turks and Caicos.  Despite being remote, it makes for the best fly-fishing and some of the most stunning scenery.',
+            link: 'https://www.greatbonefishing.com'
         }
     };
 
